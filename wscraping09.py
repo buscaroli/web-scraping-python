@@ -33,10 +33,6 @@ def getLinks(url):
     '''Gets the list of links found at the given URL'''
     bsObject = validateURL(url)
     urlList = []
-    # I am targeting ony the links inside a specific 'div' that has
-    # an ID of 'bodyContent'. Inside this div I am selecting all links
-    # that start with '/wiki/' and that do not have a ':' character (
-    # this last part is done by using (?!:))
     for link in bsObject.find('div', {'id': 'bodyContent'}).findAll(
             'a', href=myRegEx):
         if 'href' in link.attrs:
@@ -59,5 +55,10 @@ random.seed(datetime.datetime.now())
 
 baseURL = 'http://en.wikipedia.org'
 myPage = '/wiki/Kevin_Bacon'
+# REGEX: 
+# I am targeting ony the links inside a specific 'div' that has
+# an ID of 'bodyContent'. Inside this div I am selecting all links
+# that start with '/wiki/' and that do not have a ':' character (
+# this last part is done by using (?!:))
 myRegEx = re.compile('^(/wiki/)((?!:).)*$')
 followPrintLinks(myPage, 10)

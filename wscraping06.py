@@ -46,4 +46,3 @@ for child in bs.find('table', {'id': 'giftList'}).children:
 print(8 * '~')
 # Printing the text of the previous sibling of the parent of the image
 print(bs.find('img', {'src': '../img/gifts/img4.jpg'}).parent.previous_sibling.getText())
-

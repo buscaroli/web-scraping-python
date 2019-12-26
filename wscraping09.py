@@ -55,7 +55,7 @@ random.seed(datetime.datetime.now())
 
 baseURL = 'http://en.wikipedia.org'
 myPage = '/wiki/Kevin_Bacon'
-# REGEX: 
+# REGEX:
 # I am targeting ony the links inside a specific 'div' that has
 # an ID of 'bodyContent'. Inside this div I am selecting all links
 # that start with '/wiki/' and that do not have a ':' character (

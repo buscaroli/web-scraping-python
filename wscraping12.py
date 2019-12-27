@@ -67,7 +67,7 @@ def getMonth(city, year, month):
 def printMonth(city, year, month):
     '''Prints a table with the data of the month to the console'''
     data = getMonth(city, year, month)
-    values = ['Day', 'Tmax', 'Tmin', 'Rain', 'Umidity',
+    values = ['Day', 'Tmax', 'Tmin', 'Tavg', 'Rain', 'Umidity',
               'Wind max', 'Gust', 'Meteo', 'Other']
     for item in values:
         print(item.ljust(10), end='')
@@ -90,5 +90,63 @@ def printYear(city, year):
         printMonth(city, year, month)
 
 
+def extractInt(mixed_string):
+    '''Takes a string of mixed characters and return the first int value
+    or returns None. eg '45 %' becomes '45'.
+    Can be used to extract some of the values in the table if more 
+    convenient to have integers '''
+    splLst = mixed_string.split(' ')
+    for item in splLst:
+        try:
+            return int(item)
+        except:
+            return None
+
+
+def extractFloat(mixed_string):
+    '''Takes a string of mixed characters and return the first int value
+    or returns None. eg '45 %' becomes '45'.
+    Can be used to extract some of the values in the table if more 
+    convenient to have integers '''
+    splLst = mixed_string.split(' ')
+    for item in splLst:
+        try:
+            return float(item)
+        except:
+            return None
+
+
+def printMonthFloat(city, year, month):
+    '''Prints a table with the data of the month to the console.
+    Data is converted to float where appropriate.'''
+    data = getMonth(city, year, month)
+    values = ['Day', 'Tmax C', 'Tmin C', 'T avg C', 'Rain mm', 'Umidity %',
+              'Wind(Km/h)', 'Gust(Km/h)', 'Meteo', 'Other']
+    for item in values:
+        print(item.ljust(10), end='')
+    print('')
+    i = 0
+    while i < len(data):
+        for j in range(10):
+            value = str(extractFloat(data[i]))
+            print(value.ljust(10, ' '), end='')
+            i += 1
+        print('')
+
+
+def printYearFloat(city, year):
+    '''Prints a table with the data of the year to the console.
+    Data is converted to float where appropriate.'''
+    months = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile',
+              'Maggio', 'Giugno', 'Luglio', 'Agosto',
+              'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
+    for month in months:
+        print(month.center(80, ' '))
+        printMonthFloat(city, year, month)
+
+
+# TEST:
 # printYear('Livorno', '2019')
-printMonth('Rimini', '2019', 'Gennaio')
+# printMonth('Rimini', '2019', 'Gennaio')
+printMonthFloat('Rimini', '2019', 'Gennaio')
+# printYearFloat('Rimini', '2019')

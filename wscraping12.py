@@ -5,6 +5,8 @@
 # Data gets printed to the console with the choice of
 # showing the data for the month of for the whole year
 # TODO Am I downloading a new soup for every month?
+# TODO Maybe create a function that saves the data into
+#      a csv file.
 
 
 from bs4 import BeautifulSoup
@@ -93,7 +95,7 @@ def printYear(city, year):
 def extractInt(mixed_string):
     '''Takes a string of mixed characters and return the first int value
     or returns None. eg '45 %' becomes '45'.
-    Can be used to extract some of the values in the table if more 
+    Can be used to extract some of the values in the table if more
     convenient to have integers '''
     splLst = mixed_string.split(' ')
     for item in splLst:
@@ -106,7 +108,7 @@ def extractInt(mixed_string):
 def extractFloat(mixed_string):
     '''Takes a string of mixed characters and return the first int value
     or returns None. eg '45 %' becomes '45'.
-    Can be used to extract some of the values in the table if more 
+    Can be used to extract some of the values in the table if more
     convenient to have integers '''
     splLst = mixed_string.split(' ')
     for item in splLst:

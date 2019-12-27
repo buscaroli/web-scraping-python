@@ -46,7 +46,7 @@ def printLinks(lst):
     i = 1
     for item in lst:
         index = str(i)
-        print(index.zfill(3) + '. http://en.wikipedia.org' + item.attrs['href'])
+        print(index.zfill(3) + '. http://en.wikipedia.org'+item.attrs['href'])
         i += 1
 
 

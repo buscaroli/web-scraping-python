@@ -3,6 +3,8 @@
 #
 # Getting all titles and links from the newspaper 'ilsole24ore.it'
 # and saving them as a csv file (file name: articles.csv).
+# LINUX USERS: Look at the file in the console with the command:
+# cat articles.csv | column -t -s, | less -S
 # TODO Check why only part of the titles/link get saved,
 # maybe something is generated on-the-fly (maybe JS ?!?)
 # LOOK INTO 'Infinite Loading Pages'

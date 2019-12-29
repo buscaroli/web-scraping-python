@@ -5,6 +5,8 @@
 # Data gets printed to the console with the choice of
 # showing the data for the month of for the whole year
 # TODO Am I downloading a new soup for every month?
+# TODO When the City is not found return a message instead
+#      of crashing. 
 # TODO Maybe create a function that saves the data into
 #      a csv file.
 
@@ -69,7 +71,7 @@ def getMonth(city, year, month):
 def printMonth(city, year, month):
     '''Prints a table with the data of the month to the console'''
     data = getMonth(city, year, month)
-    values = ['Day', 'Tmax', 'Tmin', 'Tavg', 'Rain', 'Umidity',
+    values = ['Day', 'Tavg', 'Tmin', 'Tmax', 'Rain', 'Umidity',
               'Wind max', 'Gust', 'Meteo', 'Other']
     for item in values:
         print(item.ljust(10), end='')
@@ -122,7 +124,7 @@ def printMonthFloat(city, year, month):
     '''Prints a table with the data of the month to the console.
     Data is converted to float where appropriate.'''
     data = getMonth(city, year, month)
-    values = ['Day', 'Tmax C', 'Tmin C', 'T avg C', 'Rain mm', 'Umidity %',
+    values = ['Day', 'Tavg C', 'Tmin C', 'Tmax C', 'Rain mm', 'Umidity %',
               'Wind(Km/h)', 'Gust(Km/h)', 'Meteo', 'Other']
     for item in values:
         print(item.ljust(10), end='')
@@ -149,6 +151,8 @@ def printYearFloat(city, year):
 
 # TEST:
 # printYear('Livorno', '2019')
-# printMonth('Rimini', '2019', 'Gennaio')
-printMonthFloat('Rimini', '2019', 'Gennaio')
+printMonth('Rimini', '2019', 'Gennaio')
+# printMonthFloat('Massa', '2019', 'Gennaio')
+# printMonthFloat('Ancona', '2019', 'Gennaio')
+# printMonthFloat('Livorno', '2019', 'Gennaio')
 # printYearFloat('Rimini', '2019')

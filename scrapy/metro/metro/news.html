@@ -1,0 +1,1408 @@
+<!doctype html>
+<html lang="en"> <!--<![endif]-->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+	<meta charset="UTF-8">
+	<!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b30b7dc1b0",applicationID:"117563747"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1158.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="HandheldFriendly" content="True"/>
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta http-equiv="cleartype" content="on"/>
+	<meta name="robots" content="max-image-preview:large">
+
+	<link rel="preconnect" href="//static.metro.co.uk">
+	<link rel="preconnect" href="//swa.metro.co.uk">
+	<link rel="preconnect" href="//cmp.dmgmediaprivacy.co.uk" crossorigin="use-credentials">
+	<link rel="preconnect" href="//adservice.google.co.uk">
+	<link rel="preconnect" href="//adservice.google.com">
+	<link rel="preconnect" href="//securepubads.g.doubleclick.net">
+	<link rel="preconnect" href="//www.googletagservices.com">
+
+	<link rel="preconnect" href="//c.amazon-adsystem.com">
+	<link rel="preconnect" href="//aax.amazon-adsystem.com">
+	<link rel="preconnect" href="//hbopenbid.pubmatic.com">
+	<link rel="preconnect" href="//ib.adnxs.com">
+	<link rel="preconnect" href="//as-sec.casalemedia.com">
+	<link rel="preconnect" href="//fastlane.rubiconproject.com">
+	<link rel="preconnect" href="//bidder.criteo.com" crossorigin>
+	<link rel="preconnect" href="//an.facebook.com">
+
+	<link rel="preconnect" href="https://static.criteo.net">
+	<link rel="preconnect" href="https://www.googletagservices.com">
+
+	
+				<meta name="google-site-verification"
+			  content="LeMDJtEkFI9nhykTNIyjEFjWsywI4Emu0vB1VDmeMVU">
+		<title>News - Latest breaking news and top headlines | Metro UK</title>
+	<link href="https://plus.google.com/115688182758722552489/" rel="publisher"/>
+	<link rel="pingback" href="https://metro.co.uk/xmlrpc.php"/>
+	<meta name="twitter:widgets:csp" content="on">
+
+		<script>
+		window.metro = window.metro || {};
+
+		metro.siteData = {"adBreakpoints":[{"minWidth":320,"name":"small"},{"minWidth":768,"name":"medium"},{"minWidth":1024,"name":"large"}],"themePath":"https:\/\/metro.co.uk\/wp-content\/themes\/metro-parent","fbAppId":"176908729004638","debug":false,"widthGuess":1024,"deviceSize":"large","deviceType":"desktop"};
+
+		metro.pageData = {"newsfeed_slug":"news","title":"News - Latest breaking news and top headlines | Metro UK","headline":"","shortHeadline":"","socialHeadline":"News","topCategory":"news","subCategory":"news","siteId":"www.metro.co.uk","type":"catpage:news","author":"","creator":"","postAge":"","siteUrl":"https:\/\/metro.co.uk","cdnUrl":"https:\/\/metro.co.uk\/wp-content\/themes\/metro-parent","requestUrl":"\/news\/","ogUrl":"https:\/\/metro.co.uk\/news\/","excerpt":"News - Latest breaking news and top headlines | Metro UK","siteName":"Metro","ogimageUrl":"https:\/\/metro.co.uk\/wp-content\/themes\/metro-parent\/img\/branding\/metro.co.uk\/m-black-share.png","ogimageWidth":1200,"ogimageHeight":630,"image":"https:\/\/metro.co.uk\/wp-content\/themes\/metro-parent\/img\/branding\/metro.co.uk\/m-black-share.png","imageWidth":1200,"imageHeight":630,"ogType":"website","facebookShares":0,"comments":0,"totalShares":0,"pubDate":"","pubDateIso8601":"","pubTime":"","pubDateOffset":"","modDate":"","date":"29\/12\/2019","time":"13:59:11","timestamp":"","postId":"","authorId":"","postTags":"","postTagNames":"","isBlogPost":false,"isWidePost":false,"postLayout":"","postStyle":"","leadingImage":false,"isClubMetro":false,"isSponsored":false,"rating":false,"lazyLoadVideos":true,"containsYoutube":false,"contains":[],"isLoggedIn":false,"features":["lotame"],"omnitureArticleType":"","region":"","environment":"prod","commentable":false,"categoryName":"News","metroAnalyticsApiHost":"d20o19rp6m6brr.cloudfront.net\/metro-analytics","wordCount":421,"videoCount":0,"imageCount":3,"moreLinkCount":0,"pollCount":0};
+
+		metro.watcher = {watching: []};
+
+		// Polyfills if needed
+		var polyfills = [];
+		if (typeof Object.assign === 'undefined') {
+			polyfills.push('Object.assign');
+		}
+		if (typeof Promise === 'undefined') {
+			polyfills.push('Promise');
+		}
+		if (typeof HTMLPictureElement === 'undefined') {
+			polyfills.push('HTMLPictureElement');
+		}
+		if (polyfills.length) {
+			var script = document.createElement('script');
+			script.src = 'https://cdn.polyfill.io/v2/polyfill.min.js?features=' + polyfills.join(',');
+			document.head.appendChild(script);
+		}
+	</script>
+	
+	<link rel="canonical" href="https://metro.co.uk/news/" /><meta name="description" content="News &#8211; Latest breaking news and top headlines" /><meta name="keywords" content="news" /><meta name="google-site-verification" content="dw9hpg39AHDGSShZcoIMO6VkFKmMc9QXDNxQrLaRGB8" />
+<meta name="msvalidate.01" content="AE7395BB35A71648216DC12EB230C308" />
+<meta name="google-site-verification" content="NRfCb8mBNAy5_f17NpvLZYoY38EzM2dgpcOh_Am9yps" />
+
+<!-- Jetpack Site Verification Tags -->
+<meta name="msvalidate.01" content="11110DC8D42E74E13F24B3A18E7CFB8A" />
+<link rel="alternate" type="application/rss+xml" title="Metro &raquo; News Category Feed" href="/news/feed/" />
+<link rel='stylesheet' id='all-css-0' href='https://metro.co.uk/wp-includes/css/dist/block-library/style.min.css?m=1576710942g' type='text/css' media='all' />
+<link rel='stylesheet' id='screen-css-2' href='https://metro.co.uk/_static/??-eJydks1uxCAMhF+oLNlVNtlL1WexgpcgBZzaTqJ9+9KfS28mNzR8gwZ7/LG6iYpiUa8zZhSfUZncCvytTSKeUVAv9fTmDfSz3ouZnnFZke18qoCdXuBFmz36jBCQG35K2oRztkcvVNxKolWLaLdlEkiTGQee5rSjmVcEaVnXkULEhjoUPMQ9EYM9UT2FVKLLkIp9TD9ChNww2gkUI/Grggtt7GhH5hQaXliXLaaG+jauHkMC97lhjdidcvWPc76hO+cbh8cp37W79WeNd5Nxr6Ui/tMg1E2r+JBE/0uX/Nu5j/x+vY9DN976of8CMvz+0Q==' type='text/css' media='screen' />
+<script>
+					window.adverts = { definedSlots: [] };
+					window.adverts.addToArray = function(slot) {
+						window.adverts.definedSlots.push(slot)
+					};
+					window.adverts.config = {"adsRefresh":{"interval":15000,"activeViewBuffer":1000},"prebid":{"timeout":2000},"cmp":{"version":"2.2.28-met","consentOnClick":false},"adsRefreshNew":{"mpu_top":30000,"mpu_bottom":30000,"mpu_puff_10":30000,"mpu_mobile_top":30000,"mpu_mobile":30000,"mpu_mobile_mid":30000,"mpu_tablet":30000,"mpu_tablet_mid":30000,"billboard":30000},"adsRefreshOld":["sticky_banner","ldr_top","sky_left_top","sky_right_top"]};
+				
+</script>
+<script src='https://cdn.metro.co.uk/metro-adverts/1.1.66/metro-adverts.min.js'></script>
+<script defer src='//static.metro.co.uk/video/1.1.108/player.js'></script>
+<link rel='https://api.w.org/' href='https://metro.co.uk/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://metro.co.uk/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://metro.co.uk/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.3.2" />
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<style type='text/css'>img#wpstats{display:none}</style>			<meta property="fb:pages" content="117118184990145" />
+							<meta property="ia:markup_url" content="https://metro.co.uk/2019/12/29/queen-arrives-sandringham-church-service-without-prince-andrew-11972252/?ia_markup=1" />
+						<style>
+		.getty.aligncenter {
+			text-align: center;
+		}
+		.getty.alignleft {
+			float: none;
+			margin-right: 0;
+		}
+		.getty.alignleft > div {
+			float: left;
+			margin-right: 5px;
+		}
+		.getty.alignright {
+			float: none;
+			margin-left: 0;
+		}
+		.getty.alignright > div {
+			float: right;
+			margin-left: 5px;
+		}
+		</style>
+		<link rel="manifest" href="/manifest.json" /><meta name="theme-color" content="#000000"/><meta name="apple-mobile-web-app-title" content="Metro"/><!-- Start OpenGraph tags -->
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:title" content="News"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://metro.co.uk/news/"/>
+<meta property="og:description" content="News - Latest breaking news and top headlines | Metro UK"/>
+<meta property="og:site_name" content="Metro"/>
+<meta property="og:image" content="https://metro.co.uk/wp-content/themes/metro-parent/img/branding/metro.co.uk/m-black-share.png"/>
+<meta property="og:image:secure_url" content="https://metro.co.uk/wp-content/themes/metro-parent/img/branding/metro.co.uk/m-black-share.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:image:src" content="https://metro.co.uk/wp-content/themes/metro-parent/img/branding/metro.co.uk/m-black-share.png">
+<meta name="twitter:title" content="News">
+<meta name="twitter:description" content="News - Latest breaking news and top headlines | Metro UK">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@MetroUK">
+<meta property="fb:app_id" content="176908729004638"/>
+<!-- End OpenGraph tags -->
+<!-- Start of Twitter tracking -->
+<meta property="twitter:account_id" content="138749160" />
+<!-- End of Twitter tracking -->
+<meta property="fb:pages" content="117118184990145,427889824264313">
+		<link rel="icon" href="https://metro.co.uk/wp-content/uploads/2018/05/m-icon-black.png?w=32" sizes="32x32" />
+		<link rel="icon" href="https://metro.co.uk/wp-content/uploads/2018/05/m-icon-black.png?w=192" sizes="192x192" />
+		<link rel="apple-touch-icon" href="https://metro.co.uk/wp-content/uploads/2018/05/m-icon-black.png?w=180" />
+		<meta name="msapplication-TileImage" content="https://metro.co.uk/wp-content/uploads/2018/05/m-icon-black.png?w=270" />
+					<style type="text/css" id="wp-custom-css">
+				@media screen and (min-width: 768px){
+	.mosaic-item.ad-slot-container{
+		display:none;
+	}
+}			</style>
+		
+	<!-- Ad slot media queries -->
+	<style type="text/css">
+		/* Overriding internal style WP adds when admin-bar on mobile */
+		@media screen and ( max-width: 1024px ) {
+			html {
+				margin-top: 0 !important;
+			}
+
+			* html body {
+				margin-top: 0 !important;
+			}
+
+			#wpadminbar {
+				display: none;
+			}
+		}
+	</style>
+
+	
+	<script type="application/ld+json">
+	{"@context":"https:\/\/schema.org","@type":"Organization","name":"Metro.co.uk","url":"https:\/\/metro.co.uk","sameAs":["https:\/\/www.facebook.com\/metrouk","https:\/\/www.twitter.com\/metrouk","https:\/\/uk.pinterest.com\/metrouk","https:\/\/www.instagram.com\/metro.co.uk"],"logo":{"@type":"ImageObject","url":"https:\/\/s0.wp.com\/wp-content\/themes\/vip\/metrouk\/img\/branding\/metro.co.uk\/m-black-share.png"}}
+
+
+
+
+
+
+
+	</script>
+
+</head>
+<body class="archive category category-news category-103 www large esports christmas has-hover"
+	  id="query-hash-8130159d56c2b0cfde801264bb95c3ae">
+
+<div id="fb-root"></div>
+<!-- Facebook -->
+
+			<script>
+
+				window.fbApi = (function () {
+
+					var fbApiInit = false;
+					var awaitingReady = [];
+
+					var notifyQ = function () {
+						var i = 0,
+							l = awaitingReady.length;
+						for (i = 0; i < l; i++) {
+							awaitingReady[i]();
+						}
+					};
+
+					var ready = function (cb) {
+						if (fbApiInit) {
+							cb();
+						} else {
+							awaitingReady.push(cb);
+						}
+					};
+
+					var checkLoaded = function () {
+						return fbApiInit;
+					};
+
+					window.fbAsyncInit = function () {
+						FB.init({
+							appId: '176908729004638',
+							xfbml: true,
+							version: 'v2.10'
+						});
+
+						fbApiInit = true;
+						notifyQ();
+					};
+
+					return {
+						'ready'  : ready,
+						'loaded' : checkLoaded
+					};
+
+				})();
+
+				(function () {
+					function injectFBSDK() {
+						if ( window.fbApi && window.fbApi.loaded() ) return;
+
+						var d = document,
+							s = 'script',
+							id = 'facebook-jssdk';
+						var js, fjs = d.getElementsByTagName(s)[0];
+						if (d.getElementById(id)) {
+							return;
+						}
+						js = d.createElement(s);
+						js.id = id;
+						js.async = true;
+						js.src = "//connect.facebook.net/en_US/sdk.js";
+						fjs.parentNode.insertBefore(js, fjs);
+					}
+
+					if ('object' === typeof metro && 'article' === metro.pageData.type) {
+						window.addEventListener('metro:scroll', injectFBSDK, {once: true});
+					} else {
+						window.addEventListener('DOMContentLoaded', injectFBSDK, {once: true});
+					}
+				})();
+
+			</script>
+
+			
+
+<div id="page-container" class="page-container">
+
+	
+		<div id="masthead" class="clearfix">
+
+			<a href="/" title="Metro" id="metro-logo"
+			   class="icon icon-metro-logo-black"
+			   rel="home" data-track="head-nav/home-logo"></a>
+			<nav id="main-nav-container"
+				 class="main-nav-container clearfix ">
+				<div class="nav-strap">News... but not as you know it</div>
+				<nav class="main-nav-container-mobile">
+					<a href="/news/" title="News" data-track="mobile-nav-news"
+					   class="hidden-md-up active">News</a>
+					<a href="/sport/" title="Sport" data-track="mobile-nav-sport"
+					   class="hidden-md-up ">Sport</a>
+					<a href="/trending/" title="Trending"
+					   class=" mobile-nav-trending hidden-sm-down"
+					   data-track="trending-nav">Trending</a>
+				</nav>
+				<a class="nav-control" data-track="head-nav/nav-control"></a>
+
+				<ul id="menu-main-menu" class="nav-menu clearfix"><li id="nav-menu-item-488626" class="cat-parent-news menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-has-children"><a href="/news/" class="menu-link main-menu-link" data-track="head-nav/News">News</a>
+<ul class="sub-menu">
+	<li id="nav-menu-item-3329016" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/news/uk/" class="menu-link sub-menu-link" data-track="head-nav/UK">UK</a></li>
+	<li id="nav-menu-item-3329017" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/news/world/" class="menu-link sub-menu-link" data-track="head-nav/World">World</a></li>
+	<li id="nav-menu-item-490012" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/news/weird/" class="menu-link sub-menu-link" data-track="head-nav/Weird">Weird</a></li>
+	<li id="nav-menu-item-490154" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/news/tech/" class="menu-link sub-menu-link" data-track="head-nav/Tech">Tech</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-488791" class="cat-parent-sport menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a href="/sport/" class="menu-link main-menu-link" data-track="head-nav/Sport">Sport</a>
+<ul class="sub-menu">
+	<li id="nav-menu-item-489073" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/sport/football/" class="menu-link sub-menu-link" data-track="head-nav/Football">Football</a></li>
+	<li id="nav-menu-item-6691750" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/sport/tennis/" class="menu-link sub-menu-link" data-track="head-nav/Tennis">Tennis</a></li>
+	<li id="nav-menu-item-6957594" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/sport/cricket/" class="menu-link sub-menu-link" data-track="head-nav/Cricket">Cricket</a></li>
+	<li id="nav-menu-item-6692024" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/sport/boxing/" class="menu-link sub-menu-link" data-track="head-nav/Boxing">Boxing</a></li>
+	<li id="nav-menu-item-6692025" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/sport/ufc/" class="menu-link sub-menu-link" data-track="head-nav/UFC">UFC</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-4952890" class="cat-parent-entertainment menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a href="/entertainment/" class="menu-link main-menu-link" data-track="head-nav/Entertainment">Entertainment</a>
+<ul class="sub-menu">
+	<li id="nav-menu-item-4934227" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/entertainment/showbiz/" class="menu-link sub-menu-link" data-track="head-nav/Showbiz">Showbiz</a></li>
+	<li id="nav-menu-item-490156" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/entertainment/tv/" class="menu-link sub-menu-link" data-track="head-nav/TV">TV</a></li>
+	<li id="nav-menu-item-490148" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/entertainment/film/" class="menu-link sub-menu-link" data-track="head-nav/Film">Film</a></li>
+	<li id="nav-menu-item-4953038" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/entertainment/music/" class="menu-link sub-menu-link" data-track="head-nav/Music">Music</a></li>
+	<li id="nav-menu-item-4953037" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/entertainment/gaming/" class="menu-link sub-menu-link" data-track="head-nav/Gaming">Gaming</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-8269310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a href="/tv-soaps/" class="menu-link main-menu-link" data-track="head-nav/Soaps">Soaps</a>
+<ul class="sub-menu">
+	<li id="nav-menu-item-8269306" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/tv-soaps/eastenders/" class="menu-link sub-menu-link" data-track="head-nav/EastEnders">EastEnders</a></li>
+	<li id="nav-menu-item-8269307" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/tv-soaps/emmerdale/" class="menu-link sub-menu-link" data-track="head-nav/Emmerdale">Emmerdale</a></li>
+	<li id="nav-menu-item-8269305" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/tv-soaps/coronation-street/" class="menu-link sub-menu-link" data-track="head-nav/Coronation Street">Coronation Street</a></li>
+	<li id="nav-menu-item-8269308" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/tv-soaps/hollyoaks/" class="menu-link sub-menu-link" data-track="head-nav/Hollyoaks">Hollyoaks</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-488790" class="cat-parent-lifestyle menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a href="/lifestyle/" class="menu-link main-menu-link" data-track="head-nav/Lifestyle">Lifestyle</a>
+<ul class="sub-menu">
+	<li id="nav-menu-item-490153" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/lifestyle/sex/" class="menu-link sub-menu-link" data-track="head-nav/Sex">Sex</a></li>
+	<li id="nav-menu-item-9799865" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/lifestyle/health/" class="menu-link sub-menu-link" data-track="head-nav/Health">Health</a></li>
+	<li id="nav-menu-item-3290990" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/lifestyle/fashion/" class="menu-link sub-menu-link" data-track="head-nav/Fashion">Fashion</a></li>
+	<li id="nav-menu-item-490149" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/lifestyle/food/" class="menu-link sub-menu-link" data-track="head-nav/Food">Food</a></li>
+	<li id="nav-menu-item-490155" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/lifestyle/travel/" class="menu-link sub-menu-link" data-track="head-nav/Travel">Travel</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-10711891" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://metro.co.uk/blogs/" class="menu-link main-menu-link" data-track="head-nav/Platform">Platform</a></li>
+<li id="nav-menu-item-6188653" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/video/" class="menu-link main-menu-link" data-track="head-nav/Video">Video</a></li>
+<li id="nav-menu-item-4934117" class="menu-item-more menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#" class="menu-link main-menu-link" data-track="head-nav/More">More</a>
+<ul class="sub-menu">
+	<li id="nav-menu-item-5464253" class="nav-menu-item-tablet menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/lifestyle/" class="menu-link sub-menu-link" data-track="head-nav/Lifestyle">Lifestyle</a></li>
+	<li id="nav-menu-item-6512672" class="menu-item menu-item-type-custom menu-item-object-custom"><a rel="follow" href="https://discountcode.metro.co.uk/" class="menu-link sub-menu-link" data-track="head-nav/Discounts">Discounts</a></li>
+	<li id="nav-menu-item-7453037" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://metro.co.uk/submit-stuff/" class="menu-link sub-menu-link" data-track="head-nav/Submit Stuff">Submit Stuff</a></li>
+	<li id="nav-menu-item-4934131" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://metro.co.uk/competitions/" class="menu-link sub-menu-link" data-track="head-nav/Competitions">Competitions</a></li>
+	<li id="nav-menu-item-4936480" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/lifestyle/property/" class="menu-link sub-menu-link" data-track="head-nav/Property">Property</a></li>
+	<li id="nav-menu-item-9013135" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://metro.co.uk/jobs" class="menu-link sub-menu-link" data-track="head-nav/Jobs">Jobs</a></li>
+	<li id="nav-menu-item-6584766" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" rel="noopener" href="http://www.mailadvertising.co.uk/brand/metro-co-uk/" class="menu-link sub-menu-link" data-track="head-nav/Advertise">Advertise</a></li>
+	<li id="nav-menu-item-10831471" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://metro.co.uk/weather/" class="menu-link sub-menu-link" data-track="head-nav/Weather">Weather</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-6074849" class="metro-hide-trending-sub-item-on-desktop menu-item menu-item-type-post_type menu-item-object-page"><a href="https://metro.co.uk/trending/" class="menu-link main-menu-link" data-track="head-nav/Trending">Trending</a></li>
+<li id="nav-menu-item-3361130" class="search menu-item menu-item-type-custom menu-item-object-custom"><a href="/search/" class="menu-link main-menu-link" data-track="head-nav/Search Metro">Search Metro</a></li>
+<li class="nav-follow">
+	<span>Follow us</span>
+	<a href="http://www.facebook.com/metrouk" class="follow-icon facebook" data-track="social-follow-fb" target="_blank" rel="noopener"><span class="icon icon-facebook"></span></a>
+	<a href="http://www.twitter.com/metrouk" class="follow-icon twitter" data-track="social-follow-twitter" target="_blank" rel="noopener"><span class="icon icon-twitter"></span></a>
+	<a href="https://uk.pinterest.com/metrouk" class="follow-icon pinterest" data-track="social-follow-pinterest" target="_blank" rel="noopener"><span class="icon icon-pinterest"></span></a>
+	<a href="https://www.instagram.com/metro.co.uk" class="follow-icon instagram" data-track="social-follow-instagram" target="_blank" rel="noopener"><span class="icon icon-instagram"></span></a>
+</li></ul>
+			</nav>
+							<div id="masthead-follow">
+					<a href="http://www.facebook.com/metrouk" class="masthead-follow-icon facebook"
+					   data-track="social-follow-fb" target="_blank" rel="noopener">
+						<span class="hidden-screen-reader-text">Follow Metro.co.uk on Facebook</span>
+						<span class="icon icon-facebook"></span>
+					</a>
+					<a href="http://www.twitter.com/metrouk" class="masthead-follow-icon twitter"
+					   data-track="social-follow-twitter" target="_blank" rel="noopener">
+						<span class="hidden-screen-reader-text">Follow Metro.co.uk on Twitter</span>
+						<span class="icon icon-twitter"></span>
+					</a>
+					<a href="https://uk.pinterest.com/metrouk" class="masthead-follow-icon pinterest"
+					   data-track="social-follow-pinterest" target="_blank" rel="noopener">
+						<span class="hidden-screen-reader-text">Follow Metro.co.uk on Pinterest</span>
+						<span class="icon icon-pinterest"></span>
+					</a>
+					<a href="https://www.instagram.com/metro.co.uk" class="masthead-follow-icon instagram"
+					   data-track="social-follow-instagram" target="_blank" rel="noopener">
+						<span class="hidden-screen-reader-text">Follow Metro.co.uk on Instagram</span>
+						<span class="icon icon-instagram"></span>
+					</a>
+				</div>
+			
+			<p class="nav-share-count"><span>135.6<i>m</i></span> shares</p>
+		</div>
+		<!-- #masthead -->
+
+		<div id="we-need-monies">
+			<a href="https://www.facebook.com/MetroUK" class="house-promo" data-track="house-promo">&nbsp;</a>
+			
+
+<div class="ad-slot-container"><div class="ad-slot ad-slot-small page-top-leaderboard" id="sticky_banner" data-unit="page-top-leaderboard"><script>if(window.adverts) { adverts.addToArray({"pos":"sticky_banner"}) }</script><span class="ad-slot-label-container"><span class="ad-slot-label">Advertisement</span></span></div><div class="ad-slot ad-slot-medium page-top-leaderboard" id="ldr_top" data-unit="page-top-leaderboard"><script>if(window.adverts) { adverts.addToArray({"pos":"ldr_top"}) }</script><span class="ad-slot-label-container"><span class="ad-slot-label">Advertisement</span></span></div><div class="ad-slot ad-slot-large page-top-leaderboard" id="billboard" data-unit="page-top-leaderboard"><script>if(window.adverts) { adverts.addToArray({"pos":"billboard"}) }</script><span class="ad-slot-label-container"><span class="ad-slot-label">Advertisement</span></span></div></div>
+
+		</div>
+
+	
+		<div id="pageBody" class="page-body">
+					<span class="archive-timestamp">
+						<h1			>News</h1> Last Updated: 1:47 GMT, 29 December 2019			</span>
+				<div class="pageBackground">
+
+<!-- Channel Top -->
+<div id="channel-top" class="widget-area channel-top channel-area sidebar clearfix">
+			</div>
+
+<!-- Channel Middle -->
+<div id="channel-middle" class="widget-area channel-middle channel-area sidebar clearfix">
+	<div id="mosaic-channel-zone-wrapper" class="mosaic-channel-zone-wrapper" data-nosnippet><div class="mosaic-channel-zone-widget mosaic"><div class="mosaic-item wide item-0 news colour-3" data-postid="11971871"><h3 class="title"><a href="https://metro.co.uk/2019/12/29/anti-jewish-racist-graffiti-painted-north-london-11971871/" data-track="mosaic-zone/item-0/title"><span class="colour-box">Anti-Jewish racist graffiti painted across north London</span></a></h3><a href="https://metro.co.uk/2019/12/29/anti-jewish-racist-graffiti-painted-north-london-11971871/" data-track="mosaic-zone/item-0/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115307031.jpg?quality=90&#038;strip=all&#038;crop=0px%2C30px%2C1200px%2C600px&#038;resize=650%2C325" width="480" alt="thumbnail for post ID 11971871" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/29/anti-jewish-racist-graffiti-painted-north-london-11971871/">The shocking anti-Semitic graffiti appeared across several high streets in North London.</a></p></div><div class="mosaic-item item-1 news colour-10" data-postid="11971526"><h3 class="title"><a href="https://metro.co.uk/2019/12/29/driver-87-dies-prison-days-jailed-killing-woman-car-park-11971526/" data-track="mosaic-zone/item-1/title"><span class="colour-box">Driver, 87, dies in prison days after being jailed for killing woman in car park</span></a></h3><a href="https://metro.co.uk/2019/12/29/driver-87-dies-prison-days-jailed-killing-woman-car-park-11971526/" data-track="mosaic-zone/item-1/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115299290.jpg?quality=90&#038;strip=all&#038;crop=75px%2C0px%2C473px%2C630px&#038;resize=315%2C420" width="480" alt="thumbnail for post ID 11971526" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/29/driver-87-dies-prison-days-jailed-killing-woman-car-park-11971526/">The judge was told at the time: &#039;incarceration in a new environment could result in hospital admission for a life threatening illness.&#039;</a></p></div><div class="mosaic-item item-2 news colour-1" data-postid="11971752"><h3 class="title"><a href="https://metro.co.uk/2019/12/29/sydneys-iconic-new-years-eve-fireworks-go-ahead-despite-bushfires-11971752/" data-track="mosaic-zone/item-2/title"><span class="colour-box">Sydney&#039;s iconic New Year&#039;s Eve fireworks to go ahead despite bushfires</span></a></h3><a href="https://metro.co.uk/2019/12/29/sydneys-iconic-new-years-eve-fireworks-go-ahead-despite-bushfires-11971752/" data-track="mosaic-zone/item-2/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115305701.jpg?quality=90&#038;strip=all&#038;crop=2px%2C0px%2C1121px%2C630px&#038;resize=650%2C366" width="480" alt="thumbnail for post ID 11971752" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/29/sydneys-iconic-new-years-eve-fireworks-go-ahead-despite-bushfires-11971752/">But firefighting authorities in the country have refused to rule out cancelling the display at the last minute.</a></p></div><div class="mosaic-item item-small item-3 news colour-9" data-postid="11971780"><h3 class="title"><a href="https://metro.co.uk/2019/12/29/prince-harry-meghan-markle-refused-reservation-expensive-restaurant-11971780/" data-track="mosaic-zone/item-3/title"><span class="colour-box">Prince Harry and Meghan Markle &#039;refused reservation at expensive restaurant&#039;</span></a></h3><a href="https://metro.co.uk/2019/12/29/prince-harry-meghan-markle-refused-reservation-expensive-restaurant-11971780/" data-track="mosaic-zone/item-3/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115307293.jpg?quality=90&#038;strip=all&#038;crop=0px%2C0px%2C1120px%2C630px&#038;resize=650%2C366" width="480" alt="thumbnail for post ID 11971780" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/29/prince-harry-meghan-markle-refused-reservation-expensive-restaurant-11971780/">Owners of the Canadian restaurant have blamed security concerns.</a></p></div><div class="mosaic-item item-small item-4 news colour-8" data-postid="11971743"><h3 class="title"><a href="https://metro.co.uk/2019/12/29/transgender-man-gives-birth-getting-pregnant-female-sperm-donor-11971743/" data-track="mosaic-zone/item-4/title"><span class="colour-box">Transgender man gives birth after getting pregnant with female sperm donor</span></a></h3><a href="https://metro.co.uk/2019/12/29/transgender-man-gives-birth-getting-pregnant-female-sperm-donor-11971743/" data-track="mosaic-zone/item-4/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115306587.jpg?quality=90&#038;strip=all&#038;crop=40px%2C0px%2C1120px%2C630px&#038;resize=650%2C366" width="480" alt="thumbnail for post ID 11971743" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/29/transgender-man-gives-birth-getting-pregnant-female-sperm-donor-11971743/">Reuben Sharpe, 39, transitioned to male 12 years ago but decided he still wanted to become a parent.</a></p></div><div class="mosaic-item item-small item-5 news colour-2" data-postid="11971451"><h3 class="title"><a href="https://metro.co.uk/2019/12/29/ministers-relaxed-rules-visas-polo-teams-please-queen-11971451/" data-track="mosaic-zone/item-5/title"><span class="colour-box">Ministers relaxed rules on visas for polo teams &#039;to please the Queen&#039;</span></a></h3><a href="https://metro.co.uk/2019/12/29/ministers-relaxed-rules-visas-polo-teams-please-queen-11971451/" data-track="mosaic-zone/item-5/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/comp-1577618846.png?crop=2px%2C0px%2C1198px%2C675px&#038;resize=650%2C366" width="480" alt="thumbnail for post ID 11971451" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/29/ministers-relaxed-rules-visas-polo-teams-please-queen-11971451/">A planned crackdown on visa exploitation by polo teams was watered down two years ago.</a></p></div><div class="mosaic-item item-small item-6 news colour-5" data-postid="11971317"><h3 class="title"><a href="https://metro.co.uk/2019/12/29/speedboat-killer-planning-wedding-prison-despite-married-already-11971317/" data-track="mosaic-zone/item-6/title"><span class="colour-box">Speedboat killer &#039;planning wedding from prison - despite being married already&#039;</span></a></h3><a href="https://metro.co.uk/2019/12/29/speedboat-killer-planning-wedding-prison-despite-married-already-11971317/" data-track="mosaic-zone/item-6/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115298485.jpg?quality=90&#038;strip=all&#038;crop=40px%2C0px%2C473px%2C630px&#038;resize=315%2C420" width="480" alt="thumbnail for post ID 11971317" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/29/speedboat-killer-planning-wedding-prison-despite-married-already-11971317/">His girlfriend said she will wait for him to be released from jail.</a></p></div><div class="mosaic-item ad-slot-container"><div id="mpu_mosaic_top" class="ad-slot ad-slot-small ad-slot-mosaic"><script>if(window.adverts) { adverts.addToArray({"pos": "mpu_mosaic_top"}) }</script></div></div><div class="mosaic-item item-small item-7 news colour-4" data-postid="11971292"><h3 class="title"><a href="https://metro.co.uk/2019/12/29/five-stabbed-machete-attack-rabbis-home-new-york-11971292/" data-track="mosaic-zone/item-7/title"><span class="colour-box">Five stabbed in &#039;machete attack&#039; at rabbi&#039;s home in New York</span></a></h3><a href="https://metro.co.uk/2019/12/29/five-stabbed-machete-attack-rabbis-home-new-york-11971292/" data-track="mosaic-zone/item-7/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115297569.jpg?quality=90&#038;strip=all&#038;crop=14px%2C0px%2C1120px%2C630px&#038;resize=650%2C366" width="480" alt="thumbnail for post ID 11971292" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/29/five-stabbed-machete-attack-rabbis-home-new-york-11971292/">They were stabbed during a Hanukkah celebration at the home of a rabbi in upstate New York.</a></p></div><div class="mosaic-item item-small item-8 news colour-6" data-postid="11971383"><h3 class="title"><a href="https://metro.co.uk/2019/12/29/bbc-accused-preaching-climate-change-guest-bbc-radio-editor-11971383/" data-track="mosaic-zone/item-8/title"><span class="colour-box">BBC accused of &#039;preaching about climate change&#039; by guest BBC radio editor</span></a></h3><a href="https://metro.co.uk/2019/12/29/bbc-accused-preaching-climate-change-guest-bbc-radio-editor-11971383/" data-track="mosaic-zone/item-8/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115301213.jpg?quality=90&#038;strip=all&#038;crop=75px%2C0px%2C1120px%2C630px&#038;resize=650%2C366" width="480" alt="thumbnail for post ID 11971383" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/29/bbc-accused-preaching-climate-change-guest-bbc-radio-editor-11971383/">Charles Moore, who edited Saturday&#039;s edition of the show, claims the broadcaster has become a &#039;secular church&#039; which &#039;tells us what we ought to think about things&#039;.</a></p></div><div class="mosaic-item item-small item-9 news colour-7" data-postid="11970565"><h3 class="title"><a href="https://metro.co.uk/2019/12/28/boy-16-stabbed-repeatedly-outside-manchester-shopping-centre-11970565/" data-track="mosaic-zone/item-9/title"><span class="colour-box">Boy, 16, stabbed repeatedly outside Manchester shopping centre</span></a></h3><a href="https://metro.co.uk/2019/12/28/boy-16-stabbed-repeatedly-outside-manchester-shopping-centre-11970565/" data-track="mosaic-zone/item-9/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115239218.jpg?quality=90&#038;strip=all&#038;crop=0px%2C0px%2C1120px%2C630px&#038;resize=650%2C366" width="480" alt="thumbnail for post ID 11970565" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/28/boy-16-stabbed-repeatedly-outside-manchester-shopping-centre-11970565/">The teenager was rushed to hospital with &#039;multiple stab wounds&#039;.</a></p></div><div class="mosaic-item item-small item-10 news colour-3" data-postid="11971293"><h3 class="title"><a href="https://metro.co.uk/2019/12/29/twin-brothers-found-dead-country-lane-suspected-joint-suicide-11971293/" data-track="mosaic-zone/item-10/title"><span class="colour-box">&#039;Twin brothers&#039; found dead on country lane in suspected joint suicide</span></a></h3><a href="https://metro.co.uk/2019/12/29/twin-brothers-found-dead-country-lane-suspected-joint-suicide-11971293/" data-track="mosaic-zone/item-10/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRI_115300110.jpg?quality=90&#038;strip=all&#038;crop=363px%2C0px%2C474px%2C630px&#038;resize=315%2C420" width="480" alt="thumbnail for post ID 11971293" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/29/twin-brothers-found-dead-country-lane-suspected-joint-suicide-11971293/">Their family had previously expressed concern for them, according to reports.</a></p></div><div class="mosaic-item item-small item-11 news colour-10" data-postid="11970697"><h3 class="title"><a href="https://metro.co.uk/2019/12/28/five-dead-plane-crashes-car-park-sets-fire-11970697/" data-track="mosaic-zone/item-11/title"><span class="colour-box">Five dead after plane crashes into car park and sets on fire</span></a></h3><a href="https://metro.co.uk/2019/12/28/five-dead-plane-crashes-car-park-sets-fire-11970697/" data-track="mosaic-zone/item-11/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115240726.jpg?quality=90&#038;strip=all&#038;crop=40px%2C0px%2C1120px%2C630px&#038;resize=650%2C366" width="480" alt="thumbnail for post ID 11970697" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/28/five-dead-plane-crashes-car-park-sets-fire-11970697/">One person is thought to have suffered 100 per cent burns.</a></p></div><div class="mosaic-item item-small item-12 news colour-1" data-postid="11968832"><h3 class="title"><a href="https://metro.co.uk/2019/12/28/dozens-students-killed-car-bomb-explodes-mogadishu-11968832/" data-track="mosaic-zone/item-12/title"><span class="colour-box">Dozens of students killed as car bomb explodes in Mogadishu</span></a></h3><a href="https://metro.co.uk/2019/12/28/dozens-students-killed-car-bomb-explodes-mogadishu-11968832/" data-track="mosaic-zone/item-12/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115191604.jpg?quality=90&#038;strip=all&#038;crop=80px%2C0px%2C2240px%2C1261px&#038;resize=650%2C366" width="480" alt="thumbnail for post ID 11968832" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/28/dozens-students-killed-car-bomb-explodes-mogadishu-11968832/">At least 76 people have been killed in one of the most deadly attacks to hit the Somalian capital in recent memory.</a></p></div><div class="mosaic-item item-small item-13 news colour-9" data-postid="11968640"><h3 class="title"><a href="https://metro.co.uk/2019/12/28/meghan-harry-trademark-hundreds-items-sparking-rumours-magazine-launch-11968640/" data-track="mosaic-zone/item-13/title"><span class="colour-box">Meghan and Harry trademark hundreds of items sparking rumours of magazine launch</span></a></h3><a href="https://metro.co.uk/2019/12/28/meghan-harry-trademark-hundreds-items-sparking-rumours-magazine-launch-11968640/" data-track="mosaic-zone/item-13/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRI_101740848-e1577528335233.jpg?quality=90&#038;strip=all&#038;crop=0px%2C1px%2C416px%2C234px&#038;resize=650%2C366" width="480" alt="thumbnail for post ID 11968640" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/28/meghan-harry-trademark-hundreds-items-sparking-rumours-magazine-launch-11968640/">The Duke and Duchess of Sussex may be expanding their Royal brand after applying to trademark hundreds of items.</a></p></div><div class="mosaic-item item-small item-14 news colour-8" data-postid="11970566"><h3 class="title"><a href="https://metro.co.uk/2019/12/28/man-left-coma-following-one-punch-attack-outside-lap-dancing-club-11970566/" data-track="mosaic-zone/item-14/title"><span class="colour-box">Man left in coma following one-punch attack outside lap-dancing club</span></a></h3><a href="https://metro.co.uk/2019/12/28/man-left-coma-following-one-punch-attack-outside-lap-dancing-club-11970566/" data-track="mosaic-zone/item-14/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRI_115238365.jpg?quality=90&#038;strip=all&#038;crop=290px%2C0px%2C560px%2C746px&#038;resize=315%2C420" width="480" alt="thumbnail for post ID 11970566" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/28/man-left-coma-following-one-punch-attack-outside-lap-dancing-club-11970566/">The 24-year-old was attacked near The Honeypot on Queen Street in Maidenhead, Berkshire, at around 4am on Saturday morning.</a></p></div><div class="mosaic-item item-small item-15 news colour-2" data-postid="11970687"><h3 class="title"><a href="https://metro.co.uk/2019/12/28/far-right-group-britain-first-says-5000-members-joined-tories-11970687/" data-track="mosaic-zone/item-15/title"><span class="colour-box">Far-right group Britain First says 5,000 of its members have joined the Tories</span></a></h3><a href="https://metro.co.uk/2019/12/28/far-right-group-britain-first-says-5000-members-joined-tories-11970687/" data-track="mosaic-zone/item-15/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115243314.jpg?quality=90&#038;strip=all&#038;crop=40px%2C0px%2C1120px%2C630px&#038;resize=650%2C366" width="480" alt="thumbnail for post ID 11970687" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/28/far-right-group-britain-first-says-5000-members-joined-tories-11970687/">The group&#039;s spokeswoman said they support Boris Johnson&#039;s &#039;firm stance against radical Islam&#039;.</a></p></div><div class="mosaic-item item-small item-16 news colour-5" data-postid="11969304"><h3 class="title"><a href="https://metro.co.uk/2019/12/28/children-among-dead-sightseeing-helicopter-crashes-hawaii-11969304/" data-track="mosaic-zone/item-16/title"><span class="colour-box">Children among dead as sightseeing helicopter crashes in Hawaii</span></a></h3><a href="https://metro.co.uk/2019/12/28/children-among-dead-sightseeing-helicopter-crashes-hawaii-11969304/" data-track="mosaic-zone/item-16/image"><img src="https://metro.co.uk/wp-content/uploads/2019/12/PRC_115183348.jpg?quality=90&#038;strip=all&#038;crop=80px%2C0px%2C2240px%2C1261px&#038;resize=650%2C366" width="480" alt="thumbnail for post ID 11969304" /></a><p class="excerpt"><a href="https://metro.co.uk/2019/12/28/children-among-dead-sightseeing-helicopter-crashes-hawaii-11969304/">Rescuers have said they do not expect to find any survivors.</a></p></div></div></div><aside id="just-in-widget"
+			   class="just-in-widget just-in-container widget"
+			   data-ad-slots="[[&quot;mpu_top&quot;,&quot;5&quot;],[&quot;mpu_bottom&quot;,&quot;16&quot;]]"
+			   data-enable-auto-height="true"
+			   data-timestamp="1577627951"
+			   data-number-posts="30"
+			   data-posts="[{&quot;ID&quot;:11968146,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/teen-kills-paedophile-priest-ramming-crucifix-throat-11968146\/&quot;,&quot;excerpt&quot;:&quot;The 91-year-old Catholic priest is said to have abused boys over at least four decades. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Teen \u2018kills paedophile priest by ramming crucifix down his throat\u2019&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115179950.jpg?quality=90&amp;strip=all&amp;crop=361px%2C0px%2C1683px%2C1261px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115179950.jpg?quality=90&amp;strip=all&amp;crop=80px%2C0px%2C2240px%2C1261px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11969319,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/john-bercow-first-speaker-230-years-not-offered-peerage-resigning-11969319\/&quot;,&quot;excerpt&quot;:&quot;Boris Johnson is said to have taken revenge over Bercow&#039;s &#039;anti-Brexit bias&#039;. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;John Bercow first speaker in 230 years not to be offered peerage after resigning&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115201481.jpg?quality=90&amp;strip=all&amp;crop=150px%2C0px%2C841px%2C630px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115201481.jpg?quality=90&amp;strip=all&amp;crop=40px%2C0px%2C1120px%2C630px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11968542,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/anger-ex-tory-leader-behind-cruel-universal-credit-given-knighthood-boris-johnson-11968542\/&quot;,&quot;excerpt&quot;:&quot;Iain Duncan Smith was slammed as the architect of a system which &#039;stripped people of their dignity&#039; and drove thousands into poverty. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Anger as ex-Tory leader behind &#039;cruel&#039; Universal Credit given knighthood by Boris Johnson&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115193812.jpg?quality=90&amp;strip=all&amp;crop=361px%2C0px%2C1683px%2C1261px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115193812.jpg?quality=90&amp;strip=all&amp;crop=80px%2C0px%2C2240px%2C1261px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11919836,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/24\/might-actually-able-buy-property-near-london-yes-really-11919836\/&quot;,&quot;excerpt&quot;:&quot;Buying your first property in or around London can seem like an impossible task - but all isn\u2019t as bleak as it seems&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:&quot;ad-feature&quot;,&quot;short_title&quot;:&quot;This is how you might actually be able to buy property near London (yes really)&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/Oxhey-March-19-016-7209.jpg?quality=90&amp;strip=all&amp;w=480&amp;h=360&amp;crop=1&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/Oxhey-March-19-016-7209.jpg?quality=90&amp;strip=all&amp;w=650&amp;h=366&amp;crop=1&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11968167,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/thai-cave-rescue-diver-dies-infection-contracted-saving-boys-11968167\/&quot;,&quot;excerpt&quot;:&quot;He passed away in hospital 17 months after the dramatic rescue operation. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Thai cave rescue diver dies from infection contracted while saving boys&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115181244.jpg?quality=90&amp;strip=all&amp;crop=361px%2C0px%2C1683px%2C1261px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115181244.jpg?quality=90&amp;strip=all&amp;crop=80px%2C0px%2C2240px%2C1261px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11941344,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/man-homeless-decade-hired-spot-just-time-christmas-11941344\/&quot;,&quot;excerpt&quot;:&quot;Malcolm, 34, battled with mental health issues and substance abuse for years and tried to take his own life after feeling &#039;invisible&#039; to everyone around him.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:&quot;exclusive&quot;,&quot;short_title&quot;:&quot;Man who was homeless for decade &#039;hired on spot&#039; just in time for Christmas&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_113960185.jpg?quality=90&amp;strip=all&amp;crop=9px%2C0px%2C1261px%2C947px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_113960185.jpg?quality=90&amp;strip=all&amp;crop=80px%2C0px%2C2240px%2C1261px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11968331,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/harry-meghans-wedding-cellist-receives-mbe-age-20-11968331\/&quot;,&quot;excerpt&quot;:&quot;Sheku Kanneh-Mason, who became the first black musician to win BBC Musician of the Year in 2016, says he is &#039;absolutely thrilled&#039; with the honour.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Harry and Meghan&#039;s wedding cellist receives MBE at age 20&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115187636.jpg?quality=90&amp;strip=all&amp;crop=206px%2C0px%2C842px%2C630px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115187636.jpg?quality=90&amp;strip=all&amp;crop=40px%2C0px%2C1120px%2C630px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11970097,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/heartbreaking-footage-shows-koala-begging-cyclists-water-searing-australian-heat-11970097\/&quot;,&quot;excerpt&quot;:&quot;Thousands of koalas are feared to have died in the bushfires. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Heartbreaking footage shows koala begging cyclists for water in searing Australian heat&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115194215.jpg?quality=90&amp;strip=all&amp;crop=148px%2C0px%2C841px%2C630px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115194215.jpg?quality=90&amp;strip=all&amp;crop=40px%2C0px%2C1120px%2C630px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11971871,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/29\/anti-jewish-racist-graffiti-painted-north-london-11971871\/&quot;,&quot;excerpt&quot;:&quot;The shocking anti-Semitic graffiti appeared across several high streets in North London.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Anti-Jewish racist graffiti painted across north London&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115307031.jpg?quality=90&amp;strip=all&amp;crop=502px%2C96px%2C698px%2C525px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115307031.jpg?quality=90&amp;strip=all&amp;crop=63px%2C0px%2C1121px%2C630px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11970565,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/boy-16-stabbed-repeatedly-outside-manchester-shopping-centre-11970565\/&quot;,&quot;excerpt&quot;:&quot;The teenager was rushed to hospital with &#039;multiple stab wounds&#039;.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Boy, 16, stabbed repeatedly outside Manchester shopping centre&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115239218.jpg?quality=90&amp;strip=all&amp;crop=523px%2C66px%2C677px%2C508px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115239218.jpg?quality=90&amp;strip=all&amp;crop=0px%2C0px%2C1120px%2C630px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11971293,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/29\/twin-brothers-found-dead-country-lane-suspected-joint-suicide-11971293\/&quot;,&quot;excerpt&quot;:&quot;Their family had previously expressed concern for them, according to reports.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;&#039;Twin brothers&#039; found dead on country lane in suspected joint suicide&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_115300110.jpg?quality=90&amp;strip=all&amp;crop=180px%2C0px%2C842px%2C630px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_115300110.jpg?quality=90&amp;strip=all&amp;crop=40px%2C0px%2C1120px%2C630px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11968832,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/dozens-students-killed-car-bomb-explodes-mogadishu-11968832\/&quot;,&quot;excerpt&quot;:&quot;At least 76 people have been killed in one of the most deadly attacks to hit the Somalian capital in recent memory. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Dozens of students killed as car bomb explodes in Mogadishu&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115191604.jpg?quality=90&amp;strip=all&amp;crop=572px%2C0px%2C1683px%2C1261px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115191604.jpg?quality=90&amp;strip=all&amp;crop=80px%2C0px%2C2240px%2C1261px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11968619,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/top-dominos-pizza-boss-david-bauernfeind-killed-tragic-accident-holiday-11968619\/&quot;,&quot;excerpt&quot;:&quot;He was in Mauritius with his family. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Top Domino\u2019s Pizza boss David Bauernfeind killed in \u2018tragic accident\u2019 on holiday&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_115182323.jpg?quality=90&amp;strip=all&amp;w=480&amp;h=360&amp;crop=1&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_115182323.jpg?quality=90&amp;strip=all&amp;w=650&amp;h=366&amp;crop=1&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11968231,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/navy-seal-chief-pardoned-trump-perfectly-okay-killing-anybody-moving-11968231\/&quot;,&quot;excerpt&quot;:&quot;Iraq veterans accused him of shooting at a 12-year-old boy. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Navy SEAL chief pardoned by Trump &#039;was perfectly okay killing anybody that was moving&#039;&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115184469.jpg?quality=90&amp;strip=all&amp;crop=136px%2C0px%2C841px%2C630px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115184469.jpg?quality=90&amp;strip=all&amp;crop=0px%2C0px%2C1120px%2C630px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11968230,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/heartbroken-mum-claims-something-wrong-pool-family-drowned-11968230\/&quot;,&quot;excerpt&quot;:&quot;The operator of the Costa del Sol hotel where the British pastor and two of his children drowned has said the mother&#039;s claims &#039;are directly at odds with the findings of the police report&#039; into the tragedy.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;&#039;Heartbroken&#039; mum claims &#039;something was wrong&#039; with pool family drowned in&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115183993.jpg?quality=90&amp;strip=all&amp;crop=492px%2C0px%2C1683px%2C1261px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115183993.jpg?quality=90&amp;strip=all&amp;crop=80px%2C0px%2C2240px%2C1261px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11968637,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/murder-victim-left-dying-street-hour-christmas-day-11968637\/&quot;,&quot;excerpt&quot;:&quot;Thames Valley Police has launched a murder investigation after the victim, in his 30s, died after an alleged &#039;altercation with another man&#039;.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;&#039;Murder victim&#039; left dying on street for hour on Christmas Day&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_115192002.jpg?quality=90&amp;strip=all&amp;crop=46px%2C0px%2C720px%2C539px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_115192002.jpg?quality=90&amp;strip=all&amp;crop=0px%2C43px%2C810px%2C455px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11969729,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/record-1000000000-cocaine-haul-discovered-hidden-inside-soy-flour-containers-11969729\/&quot;,&quot;excerpt&quot;:&quot;Navy officers in Uruguay described the find as \u2018the biggest blow to drug trafficking in the country\u2019s history\u2019.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Record $1,000,000,000 cocaine haul discovered hidden inside soy flour containers&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115212684.jpg?quality=90&amp;strip=all&amp;crop=1214px%2C178px%2C1186px%2C891px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115212684.jpg?quality=90&amp;strip=all&amp;crop=80px%2C0px%2C2240px%2C1261px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11971292,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/29\/five-stabbed-machete-attack-rabbis-home-new-york-11971292\/&quot;,&quot;excerpt&quot;:&quot;They were stabbed during a Hanukkah celebration at the home of a rabbi in upstate New York.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Five stabbed in &#039;machete attack&#039; at rabbi&#039;s home in New York&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115297569.jpg?quality=90&amp;strip=all&amp;crop=0px%2C0px%2C841px%2C630px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115297569.jpg?quality=90&amp;strip=all&amp;crop=14px%2C0px%2C1120px%2C630px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11970495,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/victims-hertfordshire-north-london-double-homicide-named-11970495\/&quot;,&quot;excerpt&quot;:&quot;The victims have been identified as Arber Fesko, 30, and Shkelqim Paja, 31.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Victims in Hertfordshire and north London double homicide named&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115230382.jpg?quality=90&amp;strip=all&amp;crop=602px%2C87px%2C598px%2C447px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115230382.jpg?quality=90&amp;strip=all&amp;crop=40px%2C0px%2C1120px%2C630px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11969518,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/brits-risk-booking-wrong-holidays-30-million-calendars-printing-error-11969518\/&quot;,&quot;excerpt&quot;:&quot;The calenders have been printed with the wrong Bank Holiday dates. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Brits at risk of booking wrong holidays after 30 million calendars have printing error&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_115203806.jpg?quality=90&amp;strip=all&amp;crop=186px%2C0px%2C2221px%2C1665px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_115203806.jpg?quality=90&amp;strip=all&amp;crop=0px%2C259px%2C2500px%2C1406px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11970697,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/five-dead-plane-crashes-car-park-sets-fire-11970697\/&quot;,&quot;excerpt&quot;:&quot;One person is thought to have suffered 100 per cent burns.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Five dead after plane crashes into car park and sets on fire&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115240726.jpg?quality=90&amp;strip=all&amp;crop=180px%2C0px%2C842px%2C630px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115240726.jpg?quality=90&amp;strip=all&amp;crop=40px%2C0px%2C1120px%2C630px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11971383,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/29\/bbc-accused-preaching-climate-change-guest-bbc-radio-editor-11971383\/&quot;,&quot;excerpt&quot;:&quot;Charles Moore, who edited Saturday&#039;s edition of the show, claims the broadcaster has become a &#039;secular church&#039; which &#039;tells us what we ought to think about things&#039;.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;BBC accused of &#039;preaching about climate change&#039; by guest BBC radio editor&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115301213.jpg?quality=90&amp;strip=all&amp;crop=89px%2C0px%2C841px%2C630px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115301213.jpg?quality=90&amp;strip=all&amp;crop=75px%2C0px%2C1120px%2C630px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11969304,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/children-among-dead-sightseeing-helicopter-crashes-hawaii-11969304\/&quot;,&quot;excerpt&quot;:&quot;Rescuers have said they do not expect to find any survivors. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Children among dead as sightseeing helicopter crashes in Hawaii&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115183348.jpg?quality=90&amp;strip=all&amp;crop=361px%2C0px%2C1683px%2C1261px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115183348.jpg?quality=90&amp;strip=all&amp;crop=80px%2C0px%2C2240px%2C1261px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11968227,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/full-2020-new-year-honours-list-11968227\/&quot;,&quot;excerpt&quot;:&quot;Who will get a knighthood in 2020?&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;The full 2020 New Year Honours list - From Olivia Newton-John to Ben Stokes&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115213330.jpg?quality=90&amp;strip=all&amp;w=480&amp;h=360&amp;crop=1&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115213330.jpg?quality=90&amp;strip=all&amp;w=650&amp;h=366&amp;crop=1&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11969113,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/prison-officers-injured-violent-riot-feltham-young-offender-institute-11969113\/&quot;,&quot;excerpt&quot;:&quot;Around 14 staff were treated after the incident at lunchtime on Friday.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Prison officers injured after violent riot at Feltham young offender institute&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_1079339141.jpg?quality=90&amp;strip=all&amp;crop=142px%2C0px%2C2221px%2C1665px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_1079339141.jpg?quality=90&amp;strip=all&amp;crop=0px%2C132px%2C2500px%2C1406px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11968640,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/meghan-harry-trademark-hundreds-items-sparking-rumours-magazine-launch-11968640\/&quot;,&quot;excerpt&quot;:&quot;The Duke and Duchess of Sussex may be expanding their Royal brand after applying to trademark hundreds of items. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Meghan and Harry trademark hundreds of items sparking rumours of magazine launch&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_101740848-e1577528335233.jpg?quality=90&amp;strip=all&amp;crop=50px%2C7px%2C335px%2C251px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_101740848-e1577528335233.jpg?quality=90&amp;strip=all&amp;crop=0px%2C1px%2C416px%2C234px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11969268,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/house-prices-one-london-borough-risen-429-just-two-decades-11969268\/&quot;,&quot;excerpt&quot;:&quot;The average house price in Newham has risen from \u00a375,762 in 2000 to \u00a3400,574.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;House prices in one London borough have risen 429% in just two decades&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_115198177.jpg?quality=90&amp;strip=all&amp;w=480&amp;h=360&amp;crop=1&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_115198177.jpg?quality=90&amp;strip=all&amp;w=650&amp;h=366&amp;crop=1&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11969063,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/schoolgirl-finds-41000-year-old-lemming-buried-permafrost-11969063\/&quot;,&quot;excerpt&quot;:&quot;It&#039;s thought the Ice Age rodent plummeted to its death. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Schoolgirl finds 41,000-year-old lemming buried in permafrost&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_115191026.jpg?quality=90&amp;strip=all&amp;crop=483px%2C737px%2C1997px%2C1499px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_115191026.jpg?quality=90&amp;strip=all&amp;crop=5px%2C771px%2C2500px%2C1407px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11971317,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/29\/speedboat-killer-planning-wedding-prison-despite-married-already-11971317\/&quot;,&quot;excerpt&quot;:&quot;His girlfriend said she will wait for him to be released from jail.&quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Speedboat killer &#039;planning wedding from prison - despite being married already&#039;&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115298485.jpg?quality=90&amp;strip=all&amp;crop=124px%2C0px%2C842px%2C630px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRC_115298485.jpg?quality=90&amp;strip=all&amp;crop=40px%2C0px%2C1120px%2C630px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}},{&quot;ID&quot;:11969733,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/28\/facebooks-libra-cryptocurrency-failed-says-swiss-finance-minister-11969733\/&quot;,&quot;excerpt&quot;:&quot;PayPal, Stripe, Visa and Mastercard have pulled out of the project under pressure from regulators. &quot;,&quot;styles&quot;:[],&quot;post_style&quot;:false,&quot;short_title&quot;:&quot;Facebook&#039;s Libra cryptocurrency &#039;has failed&#039; says Swiss finance minister&quot;,&quot;attachments&quot;:{&quot;landscape_4_3&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_75548538.jpg?quality=90&amp;strip=all&amp;crop=29px%2C0px%2C2447px%2C1836px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:145,&quot;height&quot;:109},&quot;landscape_16_9&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_75548538.jpg?quality=90&amp;strip=all&amp;crop=5px%2C396px%2C2500px%2C1406px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:366}}}]"
+			   data-style="just-in"><div class="label yellow"><span>Most Shared</span></div><ul class="just-in-widget-container just-in-list"></ul></aside></div>
+
+
+<!-- Channel Bottom -->
+<div id="channel-bottom" class="widget-area channel-bottom channel-area sidebar clearfix">
+		
+
+<div class="ad-slot-container"><div class="ad-slot ad-slot-small mpu_mosaic_mid" id="mpu_mosaic_mid" data-unit="mpu_mosaic_mid"><script>if(window.adverts) { adverts.addToArray({"pos":"mpu_mosaic_mid"}) }</script><span class="ad-slot-label-container"><span class="ad-slot-label">Advertisement</span></span></div></div>
+
+		<aside class="trending-main widget clearfix">
+			<div class="trending-main-header label yellow">
+				<span>What&#039;s trending now</span>
+			</div>
+							<a href="/trending" class="trending-main-more hidden-sm-down" data-track="more-trending-desktop">
+					More trending stories <span>&raquo;</span></a>
+						<ol>
+										<li class="tw-item-1" data-postid="11971293">
+							<a href="https://metro.co.uk/2019/12/29/twin-brothers-found-dead-country-lane-suspected-joint-suicide-11971293/"
+							   data-track="">
+								<div class="ranking-image-container">
+																		
+																				<picture class="trs-image" data-lazy-load="true">
+											<img src="https://metro.co.uk/wp-content/themes/metro-parent/img/fallback.png"
+												 data-src="https://i1.wp.com/metro.co.uk/wp-content/uploads/2019/12/PRI_115300110.jpg?quality=90&#038;strip=all&#038;crop=363px%2C0px%2C474px%2C630px&#038;resize=315%2C420&#038;zoom=1&#038;ssl=1"
+												 class="trs-image" alt="&#8216;Twin brothers&#8217; found dead on country lane in suspected joint suicide"
+												 width="235"/>
+										</picture>
+																	</div>
+								<div class="copy-container">
+									<h3 class="title">
+																				<span class="title-effect">&#8216;Twin brothers&#8217; found dead on country lane in suspected joint suicide</span>
+									</h3>
+								</div>
+							</a>
+						</li>
+												<li class="tw-item-2" data-postid="11968146">
+							<a href="https://metro.co.uk/2019/12/28/teen-kills-paedophile-priest-ramming-crucifix-throat-11968146/"
+							   data-track="">
+								<div class="ranking-image-container">
+																		
+																				<picture class="trs-image" data-lazy-load="true">
+											<img src="https://metro.co.uk/wp-content/themes/metro-parent/img/fallback.png"
+												 data-src="https://i1.wp.com/metro.co.uk/wp-content/uploads/2019/12/PRC_115179950.jpg?quality=90&#038;strip=all&#038;crop=183px%2C0px%2C947px%2C1261px&#038;resize=315%2C420&#038;zoom=1&#038;ssl=1"
+												 class="trs-image" alt="Teen ‘kills paedophile priest by ramming crucifix down his throat’"
+												 width="235"/>
+										</picture>
+																	</div>
+								<div class="copy-container">
+									<h3 class="title">
+																				<span class="title-effect">Teen ‘kills paedophile priest by ramming crucifix down his throat’</span>
+									</h3>
+								</div>
+							</a>
+						</li>
+												<li class="tw-item-3" data-postid="11971871">
+							<a href="https://metro.co.uk/2019/12/29/anti-jewish-racist-graffiti-painted-north-london-11971871/"
+							   data-track="">
+								<div class="ranking-image-container">
+																		
+																				<picture class="trs-image" data-lazy-load="true">
+											<img src="https://metro.co.uk/wp-content/themes/metro-parent/img/fallback.png"
+												 data-src="https://i2.wp.com/metro.co.uk/wp-content/uploads/2019/12/PRC_115307031.jpg?quality=90&#038;strip=all&#038;crop=656px%2C0px%2C474px%2C630px&#038;resize=315%2C420&#038;zoom=1&#038;ssl=1"
+												 class="trs-image" alt="Anti-Jewish racist graffiti painted across north London"
+												 width="235"/>
+										</picture>
+																	</div>
+								<div class="copy-container">
+									<h3 class="title">
+																				<span class="title-effect">Anti-Jewish racist graffiti painted across north London</span>
+									</h3>
+								</div>
+							</a>
+						</li>
+												<li class="tw-item-4" data-postid="11972102">
+							<a href="https://metro.co.uk/2019/12/29/burglar-jailed-terrifying-pregnant-woman-staring-kitchen-11972102/"
+							   data-track="">
+								<div class="ranking-image-container">
+																		
+																				<picture class="trs-image" data-lazy-load="true">
+											<img src="https://metro.co.uk/wp-content/themes/metro-parent/img/fallback.png"
+												 data-src="https://i1.wp.com/metro.co.uk/wp-content/uploads/2019/12/PRC_115310058.jpg?quality=90&#038;strip=all&#038;crop=363px%2C0px%2C474px%2C630px&#038;resize=315%2C420&#038;zoom=1&#038;ssl=1"
+												 class="trs-image" alt="Burglar jailed after &#8216;terrifying&#8217; pregnant woman by staring at her in kitchen"
+												 width="235"/>
+										</picture>
+																	</div>
+								<div class="copy-container">
+									<h3 class="title">
+																				<span class="title-effect">Burglar jailed after &#8216;terrifying&#8217; pregnant woman by staring at her in kitchen</span>
+									</h3>
+								</div>
+							</a>
+						</li>
+												<li class="tw-item-5" data-postid="11968227">
+							<a href="https://metro.co.uk/2019/12/28/full-2020-new-year-honours-list-11968227/"
+							   data-track="">
+								<div class="ranking-image-container">
+																		
+																				<picture class="trs-image" data-lazy-load="true">
+											<img src="https://metro.co.uk/wp-content/themes/metro-parent/img/fallback.png"
+												 data-src="https://i0.wp.com/metro.co.uk/wp-content/uploads/2019/12/PRC_115213330.jpg?quality=90&#038;strip=all&#038;w=315&#038;h=420&#038;crop=1&#038;zoom=1&#038;ssl=1"
+												 class="trs-image" alt="The full 2020 New Year Honours list &#8211; From Olivia Newton-John to Ben Stokes"
+												 width="235"/>
+										</picture>
+																	</div>
+								<div class="copy-container">
+									<h3 class="title">
+																				<span class="title-effect">The full 2020 New Year Honours list &#8211; From Olivia Newton-John to Ben Stokes</span>
+									</h3>
+								</div>
+							</a>
+						</li>
+									</ol>
+		</aside>
+		
+
+<div class="ad-slot-container"><div class="ad-slot ad-slot-small mpu_mosaic_bottom" id="mpu_mosaic_bottom" data-unit="mpu_mosaic_bottom"><script>if(window.adverts) { adverts.addToArray({"pos":"mpu_mosaic_bottom"}) }</script><span class="ad-slot-label-container"><span class="ad-slot-label">Advertisement</span></span></div></div>
+
+<!-- Data 1 from Cache --><!-- Data 2 from Cache --><!-- Data 3 from Cache breaker-zone-cache-newsfeed-breaker-control --><div class="metro-breaker widget"
+					data-path="news"
+					data-region=""
+					data-boost-tag=""
+					data-id-to-exclude=""
+					data-ad-slots="false"
+					data-sidebar="[{&quot;info&quot;:{&quot;term_id&quot;:264998033,&quot;name&quot;:&quot;Newsfeed Side Block 1&quot;,&quot;slug&quot;:&quot;newsfeed-side-1&quot;,&quot;term_group&quot;:0,&quot;term_taxonomy_id&quot;:276510,&quot;taxonomy&quot;:&quot;zoninator_zones&quot;,&quot;description&quot;:&quot;TRAVEL &quot;,&quot;parent&quot;:0,&quot;count&quot;:0,&quot;filter&quot;:&quot;raw&quot;,&quot;zoninator_parsed&quot;:true},&quot;posts&quot;:[{&quot;ID&quot;:11176875,&quot;attachments&quot;:{&quot;landscape_3_1&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/PRI_97648508.jpg?quality=90&amp;strip=all&amp;crop=0px%2C522px%2C2500px%2C835px&amp;resize=650%2C217&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:300,&quot;height&quot;:100}},&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/11\/18\/couple-quit-jobs-sell-house-spend-65000-round-world-trip-kids-11176875\/&quot;,&quot;title&quot;:&quot;Couple quit jobs, sell house and spend \u00a365,000 on round the world trip with their kids&quot;,&quot;short_title&quot;:&quot;Couple quit jobs, sell house and spend \u00a365,000 on round the world trip with their kids&quot;,&quot;default_image&quot;:&quot;https:\/\/metro.co.uk\/wp-content\/themes\/metro-parent\/img\/default-metro-300x100.png&quot;,&quot;category&quot;:&quot;lifestyle&quot;,&quot;styles&quot;:[&quot;&quot;],&quot;post_style&quot;:false},{&quot;ID&quot;:11266401,&quot;attachments&quot;:{&quot;landscape_3_1&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/GettyImages-899786584-e1575450029581.jpg?quality=90&amp;strip=all&amp;crop=0px%2C361px%2C1200px%2C401px&amp;resize=650%2C217&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:300,&quot;height&quot;:100}},&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/04\/top-10-budget-friendly-countries-to-travel-to-in-2020-according-to-lonely-planet-11266401\/&quot;,&quot;title&quot;:&quot;Top 10 budget-friendly countries to travel to in 2020&quot;,&quot;short_title&quot;:&quot;Top 10 budget-friendly countries to travel to in 2020&quot;,&quot;default_image&quot;:&quot;https:\/\/metro.co.uk\/wp-content\/themes\/metro-parent\/img\/default-metro-300x100.png&quot;,&quot;category&quot;:&quot;lifestyle&quot;,&quot;styles&quot;:[&quot;&quot;],&quot;post_style&quot;:false}]},{&quot;info&quot;:{&quot;term_id&quot;:264999659,&quot;name&quot;:&quot;Newsfeed Side Block 2&quot;,&quot;slug&quot;:&quot;newsfeed-side-2&quot;,&quot;term_group&quot;:0,&quot;term_taxonomy_id&quot;:276511,&quot;taxonomy&quot;:&quot;zoninator_zones&quot;,&quot;description&quot;:&quot;INSIDE  READERS&#039; HOMES&quot;,&quot;parent&quot;:0,&quot;count&quot;:0,&quot;filter&quot;:&quot;raw&quot;,&quot;zoninator_parsed&quot;:true},&quot;posts&quot;:[{&quot;ID&quot;:11259356,&quot;attachments&quot;:{&quot;landscape_3_1&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/12\/PRI_96003964.jpg?quality=90&amp;strip=all&amp;crop=0px%2C508px%2C2500px%2C835px&amp;resize=650%2C217&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:300,&quot;height&quot;:100}},&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/03\/rent-vicki-1225-month-two-bedroom-flat-windsor-11259356\/&quot;,&quot;title&quot;:&quot;What I Rent: Vicki, \u00a31,225 a month for a two-bedroom flat in Windsor&quot;,&quot;short_title&quot;:&quot;What I Rent: Vicki, \u00a31,225 a month for a two-bedroom flat in Windsor&quot;,&quot;default_image&quot;:&quot;https:\/\/metro.co.uk\/wp-content\/themes\/metro-parent\/img\/default-metro-300x100.png&quot;,&quot;category&quot;:&quot;lifestyle&quot;,&quot;styles&quot;:[&quot;&quot;],&quot;post_style&quot;:false},{&quot;ID&quot;:11205359,&quot;attachments&quot;:{&quot;landscape_3_1&quot;:{&quot;URL&quot;:&quot;https:\/\/i2.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/PRI_96541064.jpg?quality=90&amp;strip=all&amp;crop=0px%2C132px%2C2500px%2C835px&amp;resize=650%2C217&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:300,&quot;height&quot;:100}},&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/11\/23\/deena-josh-put-40000-deposit-house-chatham-kent-11205359\/&quot;,&quot;title&quot;:&quot;What I Own: Deena and Josh, who put down a \u00a340,000 deposit on a house in Chatham, Kent&quot;,&quot;short_title&quot;:&quot;What I Own: Deena and Josh, who put down a \u00a340,000 deposit on a house in Chatham, Kent&quot;,&quot;default_image&quot;:&quot;https:\/\/metro.co.uk\/wp-content\/themes\/metro-parent\/img\/default-metro-300x100.png&quot;,&quot;category&quot;:&quot;lifestyle&quot;,&quot;styles&quot;:[&quot;&quot;],&quot;post_style&quot;:false}]}]"
+					data-breaker="[{&quot;ID&quot;:11223333,&quot;title&quot;:&quot;It was easier to accept my son was gay than my daughter, but it made me a better ally&quot;,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/01\/it-was-easier-to-accept-my-son-was-gay-than-my-daughter-but-it-made-me-a-better-ally-11223333\/&quot;,&quot;attachments&quot;:{&quot;landscape_3_1&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/0_With-brother-Matt-this-year-cca2.jpg?quality=90&amp;strip=all&amp;crop=0px%2C48px%2C615px%2C205px&amp;resize=650%2C217&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:600,&quot;height&quot;:200},&quot;landscape_4_3_large&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/0_With-brother-Matt-this-year-cca2.jpg?quality=90&amp;strip=all&amp;crop=35px%2C0px%2C546px%2C410px&amp;resize=650%2C488&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:488},&quot;x_landscape_3_1&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/0_With-brother-Matt-this-year-cca2.jpg?quality=90&amp;strip=all&amp;crop=0px%2C48px%2C615px%2C205px&amp;resize=650%2C217&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:600,&quot;height&quot;:200}},&quot;image_4_3&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/0_With-brother-Matt-this-year-cca2.jpg?quality=90&amp;strip=all&amp;crop=35px%2C0px%2C546px%2C410px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;image_4_3_large&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/0_With-brother-Matt-this-year-cca2.jpg?quality=90&amp;strip=all&amp;crop=35px%2C0px%2C546px%2C410px&amp;resize=650%2C488&amp;zoom=1&amp;ssl=1&quot;,&quot;excerpt&quot;:&quot;25 per cent of adults have said they wouldn&#039;t be proud to have a gay child. &quot;,&quot;categories&quot;:{&quot;Families&quot;:{&quot;name&quot;:&quot;Families&quot;,&quot;slug&quot;:&quot;families&quot;,&quot;parent_detail&quot;:{&quot;name&quot;:&quot;Lifestyle&quot;,&quot;slug&quot;:&quot;lifestyle&quot;}}},&quot;styles&quot;:[&quot;blog&quot;],&quot;post_style&quot;:&quot;first-person&quot;,&quot;weight&quot;:&quot;&quot;,&quot;featured_image&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/0_With-brother-Matt-this-year-cca2.jpg?quality=90&amp;strip=all&amp;crop=35px%2C0px%2C546px%2C410px&amp;resize=650%2C488&amp;zoom=1&amp;ssl=1&quot;,&quot;image_16_9&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/0_With-brother-Matt-this-year-cca2.jpg?quality=90&amp;strip=all&amp;crop=0px%2C32px%2C615px%2C346px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;image_portrait&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/0_With-brother-Matt-this-year-cca2.jpg?quality=90&amp;strip=all&amp;crop=154px%2C0px%2C307px%2C410px&amp;resize=315%2C420&amp;zoom=1&amp;ssl=1&quot;,&quot;short_title&quot;:&quot;It was easier to accept my son was gay than my daughter, but it made me a better ally&quot;,&quot;author&quot;:{&quot;ID&quot;:11223344,&quot;name&quot;:&quot;Lesley Edwards&quot;,&quot;nice_name&quot;:&quot;lesley-edwards&quot;,&quot;author_URL&quot;:&quot;https:\/\/metro.co.uk\/author\/lesley-edwards\/&quot;,&quot;thumbnail_URL&quot;:&quot;https:\/\/metro.co.uk\/wp-content\/uploads\/2019\/11\/download-1-64d2.jpg?quality=90&amp;strip=all&amp;w=150&amp;h=150&amp;crop=1&quot;,&quot;facebook_URL&quot;:&quot;&quot;,&quot;twitter_URL&quot;:&quot;&quot;},&quot;post_type&quot;:&quot;blog&quot;,&quot;signpost&quot;:{&quot;slug&quot;:&quot;first-person&quot;,&quot;name&quot;:&quot;first person&quot;}},{&quot;ID&quot;:11242116,&quot;title&quot;:&quot;It&amp;#8217;s been 21 years since I was diagnosed with HIV and I am healthier than ever&quot;,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/12\/01\/its-been-21-years-since-i-was-diagnosed-with-hiv-and-i-am-healthier-than-ever-11242116\/&quot;,&quot;attachments&quot;:{&quot;landscape_3_1&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/MH_004-002-e9e7-e1575045774221.jpg?quality=90&amp;strip=all&amp;crop=0px%2C80px%2C1080px%2C361px&amp;resize=650%2C217&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:600,&quot;height&quot;:200},&quot;landscape_4_3_large&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/MH_004-002-e9e7-e1575045774221.jpg?quality=90&amp;strip=all&amp;crop=0px%2C49px%2C1080px%2C810px&amp;resize=650%2C488&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:488},&quot;x_landscape_3_1&quot;:{&quot;URL&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/MH_004-002-e9e7-e1575045774221.jpg?quality=90&amp;strip=all&amp;crop=0px%2C80px%2C1080px%2C361px&amp;resize=650%2C217&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:600,&quot;height&quot;:200}},&quot;image_4_3&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/MH_004-002-e9e7-e1575045774221.jpg?quality=90&amp;strip=all&amp;crop=0px%2C49px%2C1080px%2C810px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;image_4_3_large&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/MH_004-002-e9e7-e1575045774221.jpg?quality=90&amp;strip=all&amp;crop=0px%2C49px%2C1080px%2C810px&amp;resize=650%2C488&amp;zoom=1&amp;ssl=1&quot;,&quot;excerpt&quot;:&quot;Generations before me weren\u2019t so lucky. I carry the memory of those that I lost with me.&quot;,&quot;categories&quot;:{&quot;Health&quot;:{&quot;name&quot;:&quot;Health&quot;,&quot;slug&quot;:&quot;health&quot;,&quot;parent_detail&quot;:{&quot;name&quot;:&quot;Lifestyle&quot;,&quot;slug&quot;:&quot;lifestyle&quot;}}},&quot;styles&quot;:[&quot;blog&quot;],&quot;post_style&quot;:&quot;first-person&quot;,&quot;weight&quot;:&quot;&quot;,&quot;featured_image&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/MH_004-002-e9e7-e1575045774221.jpg?quality=90&amp;strip=all&amp;crop=0px%2C49px%2C1080px%2C810px&amp;resize=650%2C488&amp;zoom=1&amp;ssl=1&quot;,&quot;image_16_9&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/MH_004-002-e9e7-e1575045774221.jpg?quality=90&amp;strip=all&amp;crop=0px%2C21px%2C1080px%2C610px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;image_portrait&quot;:&quot;https:\/\/i1.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/MH_004-002-e9e7-e1575045774221.jpg?quality=90&amp;strip=all&amp;crop=190px%2C0px%2C717px%2C956px&amp;resize=315%2C420&amp;zoom=1&amp;ssl=1&quot;,&quot;short_title&quot;:&quot;It&#039;s been 21 years since I was diagnosed with HIV and I am healthier than ever&quot;,&quot;author&quot;:{&quot;ID&quot;:11242452,&quot;name&quot;:&quot;Matthew Hodson&quot;,&quot;nice_name&quot;:&quot;matthew-hodson&quot;,&quot;author_URL&quot;:&quot;https:\/\/metro.co.uk\/author\/matthew-hodson\/&quot;,&quot;thumbnail_URL&quot;:&quot;https:\/\/metro.co.uk\/wp-content\/uploads\/2019\/11\/MH_004-002-e9e7-e1575045774221.jpg?quality=90&amp;strip=all&amp;crop=86px%2C0px%2C956px%2C956px&amp;resize=150%2C150&quot;,&quot;facebook_URL&quot;:&quot;&quot;,&quot;twitter_URL&quot;:&quot;http:\/\/twitter.com\/Matthew_Hodson&quot;},&quot;post_type&quot;:&quot;blog&quot;,&quot;signpost&quot;:{&quot;slug&quot;:&quot;first-person&quot;,&quot;name&quot;:&quot;first person&quot;}},{&quot;ID&quot;:11061171,&quot;title&quot;:&quot;Muslim men open up about the financial strain of extravagant weddings&quot;,&quot;URL&quot;:&quot;https:\/\/metro.co.uk\/2019\/11\/30\/muslim-men-open-financial-strain-providing-family-11061171\/&quot;,&quot;attachments&quot;:{&quot;landscape_3_1&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/muslim-men-explain-663e.jpg?quality=90&amp;strip=all&amp;crop=108px%2C94px%2C963px%2C321px&amp;resize=650%2C217&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:600,&quot;height&quot;:200},&quot;landscape_4_3_large&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/muslim-men-explain-663e.jpg?quality=90&amp;strip=all&amp;crop=0px%2C0px%2C1200px%2C900px&amp;resize=650%2C488&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:650,&quot;height&quot;:488},&quot;x_landscape_3_1&quot;:{&quot;URL&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/muslim-men-explain-663e.jpg?quality=90&amp;strip=all&amp;crop=108px%2C94px%2C963px%2C321px&amp;resize=650%2C217&amp;zoom=1&amp;ssl=1&quot;,&quot;width&quot;:600,&quot;height&quot;:200}},&quot;image_4_3&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/muslim-men-explain-663e.jpg?quality=90&amp;strip=all&amp;crop=0px%2C0px%2C1200px%2C900px&amp;resize=480%2C360&amp;zoom=1&amp;ssl=1&quot;,&quot;image_4_3_large&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/muslim-men-explain-663e.jpg?quality=90&amp;strip=all&amp;crop=0px%2C0px%2C1200px%2C900px&amp;resize=650%2C488&amp;zoom=1&amp;ssl=1&quot;,&quot;excerpt&quot;:&quot;A lot of the strain comes from paying off the wedding. &quot;,&quot;categories&quot;:{&quot;Families&quot;:{&quot;name&quot;:&quot;Families&quot;,&quot;slug&quot;:&quot;families&quot;,&quot;parent_detail&quot;:{&quot;name&quot;:&quot;Lifestyle&quot;,&quot;slug&quot;:&quot;lifestyle&quot;}}},&quot;styles&quot;:[&quot;wide&quot;],&quot;post_style&quot;:false,&quot;weight&quot;:&quot;&quot;,&quot;featured_image&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/muslim-men-explain-663e.jpg?quality=90&amp;strip=all&amp;crop=0px%2C0px%2C1200px%2C900px&amp;resize=650%2C488&amp;zoom=1&amp;ssl=1&quot;,&quot;image_16_9&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/muslim-men-explain-663e.jpg?quality=90&amp;strip=all&amp;crop=0px%2C113px%2C1200px%2C675px&amp;resize=650%2C366&amp;zoom=1&amp;ssl=1&quot;,&quot;image_portrait&quot;:&quot;https:\/\/i0.wp.com\/metro.co.uk\/wp-content\/uploads\/2019\/11\/muslim-men-explain-663e.jpg?quality=90&amp;strip=all&amp;crop=263px%2C0px%2C675px%2C900px&amp;resize=315%2C420&amp;zoom=1&amp;ssl=1&quot;,&quot;short_title&quot;:&quot;Muslim men open up about the financial strain of extravagant weddings&quot;,&quot;author&quot;:{&quot;ID&quot;:7192641,&quot;name&quot;:&quot;Faima Bakar&quot;,&quot;nice_name&quot;:&quot;faima-bakar&quot;,&quot;author_URL&quot;:&quot;https:\/\/metro.co.uk\/author\/faima-bakar\/&quot;,&quot;thumbnail_URL&quot;:&quot;https:\/\/metro.co.uk\/wp-content\/uploads\/2017\/12\/faima.png?w=150&amp;h=150&amp;crop=1&quot;,&quot;facebook_URL&quot;:&quot;&quot;,&quot;twitter_URL&quot;:&quot;http:\/\/twitter.com\/FaimaBakar&quot;},&quot;alt_title&quot;:&quot;Muslim men open up about the financial strain of providing for their family&quot;}]"
+					data-host-url=""
+					data-prefix=""
+					data-ajax-enable=""
+					data-starting-page="1"></div><script id="metro-breaker-template-ad-article" type="text/x-handlebars-template">
+	<div class="ada-story-container">
+		<a href="{{httpsify URL}}" class="ada-image" data-track="breaker/story-image" title="{{htmlEntityDecode title}}">
+			<div class="ada-image-container">
+				<img src="{{resizeImages attachments.landscape_3_1.URL 'breakerArticleImage'}}" title="{{htmlEntityDecode title}}" />
+			</div>
+		</a>
+		<a href="{{httpsify URL}}" class="ada-title" data-track="breaker/story-title" title="{{htmlEntityDecode title}}">
+			<div class="ada-title-excerpt colour-bg-lighten-10">
+				<h3 class="ada-title-story {{getParentCategory categories}}">
+					{{#signpost.slug}}<span class="{{signpostClassnames .}}"></span>{{/signpost.slug}}
+					<span class="colour-box">{{returnDecodedNotNull short_title title}}</span>
+				</h3>
+				<p class="ada-excerpt">{{htmlEntityDecode excerpt}}</p>
+			</div>
+		</a>
+	</div>
+	<div class="ada-banner-container">
+		{{printSocialBanner this.printedAds}}
+	</div>
+</script><script id="metro-breaker-template-ad-slot" type="text/x-handlebars-template">
+	<div class="fw-ad-slot-container ad-slot-container" data-slot-name="ad-breaker-leaderboard-{{index}}">
+		{{#if large}}
+		<div style="min-height:90px;margin: 0 auto;" class="ad-slot ad-slot-large news-feed-ad ad-newsfeed-{{index}}-large" id="billboard_breaker_{{index}}"><scr{{!}}ipt>if(window.adverts) { adverts.addToArray({"pos":"billboard_breaker_{{index}}"}) }</scr{{!}}ipt></div>
+		{{else}}
+		<div style="min-height:250px;width:300px;margin: 0 auto;" class="ad-slot ad-slot-small news-feed-ad ad-newsfeed-{{index}}-small" id="mpu_breaker_{{index}}"><scr{{!}}ipt>if(window.adverts) { adverts.addToArray({"pos":"mpu_breaker_{{index}}"}) }</scr{{!}}ipt></div>
+		{{/if}}
+	</div>
+</script><script id="metro-breaker-template-countdown" type="text/x-handlebars-template">
+    
+    <div class="countdown-breaker ada-story-container">
+        <a href="{{URL}}" class="ada-image" data-track="breaker/story-image" title="{{htmlEntityDecode title}}">
+            <div class="ada-image-container">
+                <img src="{{attachments.landscape_3_1.URL}}" title="{{htmlEntityDecode title}}" />
+            </div>
+        </a>
+        <a href="{{URL}}" class="ada-title" data-track="breaker/story-title" title="{{htmlEntityDecode title}}">
+            <h3 class="ada-title-story {{getParentCategory categories}}">
+                <span class="colour-box">{{returnDecodedNotNull short_title title}}</span>
+            </h3>
+        </a>
+    </div>
+    <div class="countdown-breaker ada-banner-container">
+        <a href="{{URL}}" id="{{countdown.namespace}}" class="countdown-breaker-bg" style="background: url({{countdown.image_bg}})">
+            <div class="counter" data-time="{{countdown.time}}">
+                <p class="counter-wrap">
+                    <span class="days"></span> :
+                    <span class="hours"></span> :
+                    <span class="minutes"></span> :
+                    <span class="seconds"></span>
+                </p>
+            </div>
+        </a>
+    </div>
+</script><script id="metro-breaker-template-email-signup" type="text/x-handlebars-template">
+	<div class="sailthru-signup-widget sailthru-breaker metro-email-signup sailthru-the-fix">
+		<img src="/var/www/wp-content/themes/metro-parent/img/plugins/metro-email-signup/the-fix-screengrab.gif" class="fix-screengrab">
+		<h2 class="fix-logo">The Fix</h2>
+		<h3 class="fix-subhead"><span>The daily lifestyle email from Metro.co.uk.</span><span class="fix-sub-subhead">More sex. More food. More feelgood. Every weekday.</span></h3>
+		<div class="sailthru_form">
+			<div class="sailthru-loading"></div>
+			<div class="sailthru-output"></div>
+			<form class="sailthru-the-fix-form fix-add-subscriber-form">
+				<div class="sailthru_form_input">
+					<input type="email" name="email" class="sailthru-email" placeholder="Enter your email">
+					<button id="sailthru-fix-submit" type="submit" class="sailthru-btn" data-track="sailthru/submit">Sign up</button>
+					</div>
+				<input type="hidden" name="action" value="submit-fix">
+				<input type="hidden" name="position" value="{{ email_signup.position }}">
+				</form>
+			</div>
+		<a href="//metro.co.uk/the-fix" class="fix-info"><b>Find out more</b></a>
+		</div>'
+</script><script id="metro-breaker-template-image" type="text/x-handlebars-template">
+	<div class="image-breaker ada-banner-container">
+		<a href="{{URL}}" class="" data-track="breaker/story-title" title="{{htmlEntityDecode title}}">
+			<div class="ada-image-container">
+				<img src="{{image_breaker.img_sm}}" title="{{htmlEntityDecode title}}" />
+			</div>
+		</a>
+	</div>
+	<div class="image-breaker ada-story-container">
+		<a href="{{httpsify URL}}" class="ada-image" data-track="breaker/story-image" title="{{htmlEntityDecode title}}">
+			<div class="ada-image-container">
+				<img src="{{image_breaker.img_lg}}" title="{{htmlEntityDecode title}}" />
+			</div>
+		</a>
+		<a href="{{httpsify URL}}" class="ada-title" data-track="breaker/story-title" title="{{htmlEntityDecode title}}">
+			<h3 class="ada-title-story  {{getParentCategory categories}}">
+				<span class="colour-box">{{htmlEntityDecode title}}</span>
+			</h3>
+		</a>
+	</div>
+</script><script id="metro-breaker-template-news-feed" type="text/x-handlebars-template">
+	{{printTitleNewsFeed page}}
+
+	{{#each posts}}
+	<article id="my-{{ID}}" class="nf-item {{returnNotNull abClassName}} clearfix">
+		<div class="nf-post-box clearfix">
+			<div class="nf-image-box">
+				<a data-track="{{newfeedTrackingCode "breaker/news-feed/news-feed-image" styles ../page}}" href="{{URL}}" title="{{htmlEntityDecode title}}" class="nf-image-link">
+					<img src="{{resizeImages image_4_3 "newsFeedImage"}}" height="113"  width="150" class="attachment-hero_image wp-post-image nf-image" alt="{{htmlEntityDecode title}}">
+				</a>
+			</div>
+			<header class="nf-headline">
+				<h3 class="nf-title">
+					<a data-track="{{newfeedTrackingCode "breaker/news-feed/news-feed-title/" styles ../page}}" href="{{httpsify URL}}" title="{{htmlEntityDecode title}}">
+						{{#post_style}}<span class="{{signpostClassnames .}}"></span>{{/post_style}}
+						{{returnDecodedNotNull short_title title}}
+					</a>
+				</h3>
+			</header>
+			<div class="nf-content">
+				<div class="nf-excerpt">{{htmlEntityDecode excerpt}}</div>
+				<div class="nf-post-type"></div>
+			</div>
+			<footer class="nf-social nf-social-desktop" data-share-url="{{URL}}">
+				<div class="nf-social-buttons">
+					<span class="icon icon-facebook" data-track="breaker/news-feed-share-facebook"></span>
+					<a href="https://twitter.com/intent/tweet?url={{htmlEntityDecode URL}}&amp;via=MetroUK" class="icon icon-twitter" data-track="breaker/news-feed-share-twitter"></a>
+				</div>
+			</footer>
+			</div>
+		</article>
+	{{/each}}
+</script><script id="metro-breaker-template-poll" type="text/x-handlebars-template">
+	<div class="metro-poll-widget clearfix {{getParentCategory categories}}">
+		<div class="mpw-story-container colour-bg-lighten-10">
+			<a href="{{httpsify URL}}" class="mpw-image" data-track="breaker/poll-image" title="{{htmlEntityDecode title}}">
+				<div class="mpw-image-container">
+					<img src="{{resizeImages attachments.landscape_3_1.URL 'breakerArticleImage'}}" title="{{htmlEntityDecode title}}" />
+				</div>
+				<div class="mpw-title-container">
+					<h3 class="mpw-title-story">
+						<span class="colour-box">{{returnDecodedNotNull short_title title}}</span>
+					</h3>
+				</div>
+			</a>
+		</div>
+		<div class="mpw-poll-container colour-box-lighten-20 clearfix">
+			<div class="mpw-floater">
+				<div class="metro-poll-placeholder is-clickable" id="{{poll.ID}}" data-question="{{poll.question}}" data-option1="{{poll.option1}}" data-option2="{{poll.option2}}" data-url="//api.metro.co.uk/polls/v2/" data-link="{{URL}}">
+					<h3 class="mpw-title">
+						<a href="{{httpsify URL}}">{{poll.question}}</a>
+					</h3>
+					<ul>
+						<li data-track="breaker/poll-widget" class="mpw-option colour-box-nohover" data-option="option1">{{poll.option1}}<p class="mpw-score">0%</p><div class="mpw-score-bar-container"><div class="mpw-score-bar" style="width:0%"></div></div></li>
+						<li data-track="breaker/poll-widget" class="mpw-option colour-box-nohover" data-option="option2">{{poll.option2}}<p class="mpw-score">0%</p><div class="mpw-score-bar-container"><div class="mpw-score-bar" style="width:0%"></div></div></li>
+					</ul>
+				</div>
+				<div class="mpw-share">
+					<p class="mpw-share-cta">Share your results</p>
+					<div class="mpw-share-btns">
+						<a class="share-button facebook mpw-shrb" data-track="share-poll-breaker/share-facebook/{{poll.ID}}" data-share-type="facebook"><span class="icon icon-facebook"></span></a>
+						<a class="share-button twitter mpw-shrb" data-track="share-poll-breaker/share-twitter/{{poll.ID}}" data-share-type="twitter"><span class="icon icon-twitter"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</script><script id="metro-breaker-template-video" type="text/x-handlebars-template">
+	<div class="metro-video-widget clearfix {{getParentCategory categories}}">
+		<div class="mvw-video-container">
+			<div class="metro-video-placeholder">
+				<iframe width="609" height="371" src="{{video.URL}}" frameborder="0" allowfullscreen="true"></iframe>
+			</div>
+		</div>
+		<div class="mvw-story-container">
+			<a href="{{URL}}" class="mvw-image" data-track="breaker/video-image" title="{{htmlEntityDecode title}}">
+				<div class="mvw-image-container">
+					<img src="{{attachments.landscape_3_1.URL}}" title="{{htmlEntityDecode title}}" />
+				</div>
+				<h3 class="mvw-title-story">
+					<span class="colour-box">{{returnDecodedNotNull short_title title}}</span>
+				</h3>
+				<div class="mvw-excerpt">{{htmlEntityDecode excerpt}}</div>
+			</a>
+		</div>
+	</div>
+</script><script id="metro-breaker-template-zones" type="text/x-handlebars-template">
+	{{#each this}}
+	<div class="trending-sidebar widget is-skinny clearfix">
+		{{#if info.description}}<div class="label yellow"><span>{{info.description}}</span></div>{{/if}}
+
+		{{#if info.description}}<ul class="{{info.slug}}">{{else}}<ul>{{/if}}
+
+		{{#each posts}}
+		<li class="{{category}} {{getParentCategory categories}}{{printItemClass ../page @index}} colour-{{getColourNumber}}">
+			<a href="{{httpsify URL}}" data-track="{{trackingCode  ../info}}">
+				<img src="{{imageSrc this}}" alt="{{imageAlt this}}"/>
+				<h3 class="trs-header">
+					{{#post_style}}<span class="{{signpostClassnames .}}"></span>{{/post_style}}
+					<span class="colour-box">{{returnDecodedNotNull short_title title}}</span>
+				</h3>
+			</a>
+		</li>
+		{{/each}}
+
+		</ul>
+	</div>
+	{{/each}}
+</script></div>
+
+
+<div id="ad-special">
+	
+
+<div class="ad-slot-container"><div class="ad-slot ad-slot-small special_overlay_oop" id="special_overlay_oop" data-unit="special_overlay_oop"><script>if(window.adverts) { adverts.addToArray({"pos":"special_overlay_oop"}) }</script></div></div>
+
+
+
+<div class="ad-slot-container"><div class="ad-slot ad-slot-large jwplayer_ad_container" id="jwplayer_ad_container" data-unit="jwplayer_ad_container"><script>if(window.adverts) { adverts.addToArray({"pos":"jwplayer_ad_container"}) }</script><span class="ad-slot-label-container"><span class="ad-slot-label">Advertisement</span></span></div></div>
+
+</div>
+
+
+</div>
+</div>
+
+<div id="page-bottom-container" class="clearfix">
+
+	<div id="ad-bottom" class="ad-outer">
+			</div>
+
+	<div class="metro-discounts" data-nosnippet><div class="label yellow">
+				<span>Today's Best Discounts</span>
+			</div><a href="https://discountcode.metro.co.uk/" class="zone-widget-more-link category-colour-text" data-track="more-discounts">More discounts</a><ul class="metro-discount-codes clearfix"><li class="metro-discount-codes-item">
+					<a href="https://discountcode.metro.co.uk/currys" title="Currys" target="_blank" rel="noopener">
+						<span>
+							<img src="https://d3tsytm1wtjqo2.cloudfront.net/180x/images/c/currys_9.png" alt="Currys discount codes" />
+						</span>
+						<strong>Currys Deals</strong>
+						Save up to 20% on home electricals
+					</a>
+				</li><li class="metro-discount-codes-item">
+					<a href="https://discountcode.metro.co.uk/asos" title="ASOS" target="_blank" rel="noopener">
+						<span>
+							<img src="https://d17fy28x8ov4h8.cloudfront.net/190x/images/a/ASOSLogo_9.png" alt="ASOSdiscount codes" />
+						</span>
+						<strong>ASOS sale</strong>
+						Get discounts on dresses, tops and more from ASOS
+					</a>
+				</li><li class="metro-discount-codes-item">
+					<a href="https://discountcode.metro.co.uk/casper" title="Casper" target="_blank" rel="noopener">
+						<span>
+							<img src="https://d17fy28x8ov4h8.cloudfront.net/210x/images/c/CasperLogo_9.png" alt="Casper discount codes" />
+						</span>
+						<strong>Best Casper Deals</strong>
+						Sleep like a baby with our exclusive discount codes
+					</a>
+				</li><li class="metro-discount-codes-item">
+					<a href="https://discountcode.metro.co.uk/debenhams" title="Debenhams" target="_blank" rel="noopener">
+						<span>
+							<img src="https://d17fy28x8ov4h8.cloudfront.net/190x/images/d/deb_9.png" alt="Debenhams discount codes" />
+						</span>
+						<strong>Debenhams Deals</strong>
+						Discover Women&#039;s fashion and Homeware for less
+					</a>
+				</li><li class="metro-discount-codes-item">
+					<a href="https://discountcode.metro.co.uk/argos" title="Argos discounts " target="_blank" rel="noopener">
+						<span>
+							<img src="https://d17fy28x8ov4h8.cloudfront.net/190x/images/a/argos_9.png" alt="Argos discount codes" />
+						</span>
+						<strong>Argos</strong>
+						Save up to 20% on Technology and more 
+					</a>
+				</li></ul></div>
+	<footer id="page-bottom">
+		<div id="footer-links" class="footer-links clearfix">
+			<nav class="footer-nav">
+				<ul id="menu-footer-menu" class="nav-menu clearfix"><li id="nav-menu-item-5393360" class="nav-item-home menu-item menu-item-type-custom menu-item-object-custom"><a href="/" class="menu-link main-menu-link" data-track="footer-nav/Home">Home</a></li>
+<li id="nav-menu-item-5393361" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item"><a href="/news/" class="menu-link main-menu-link" data-track="footer-nav/News">News</a></li>
+<li id="nav-menu-item-5393362" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/sport/" class="menu-link main-menu-link" data-track="footer-nav/Sport">Sport</a></li>
+<li id="nav-menu-item-5393363" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/lifestyle/" class="menu-link main-menu-link" data-track="footer-nav/Lifestyle">Lifestyle</a></li>
+<li id="nav-menu-item-5393364" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/entertainment/" class="menu-link main-menu-link" data-track="footer-nav/Entertainment">Entertainment</a></li>
+<li id="nav-menu-item-10711886" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://metro.co.uk/blogs/" class="menu-link main-menu-link" data-track="footer-nav/Platform">Platform</a></li>
+<li id="nav-menu-item-5393373" class="search menu-item menu-item-type-custom menu-item-object-custom"><a href="/search/" class="menu-link main-menu-link" data-track="footer-nav/Search Metro">Search Metro</a></li>
+</ul>			</nav>
+			<nav class="main-nav-container-mobile">
+								<a href="/trending" title="Trending" class=""
+				   data-track="footer-nav/trending-nav">
+					Trending
+				</a>
+			</nav>
+		</div>
+
+	</footer>
+	<!-- #page-bottom -->
+</div> <!-- #page-bottom-container -->
+
+	<div class="ad-slot-container skyscraper-left">
+		<div class="ad-slot ad-slot-large" id="sky_left_top">
+			<script>
+				if (window.adverts) {
+					adverts.addToArray({"pos": "sky_left_top"})
+				}
+			</script>
+			<span class="ad-slot-label-container"><span
+						class="ad-slot-label skyscraper-left">Advertisement</span></span>
+		</div>
+	</div>
+	<div class="ad-slot-container skyscraper-right">
+		<div class="ad-slot ad-slot-large" id="sky_right_top">
+			<script>
+				if (window.adverts) {
+					adverts.addToArray({"pos": "sky_right_top"})
+				}
+			</script>
+			<span class="ad-slot-label-container"><span
+						class="ad-slot-label skyscraper-right">Advertisement</span></span>
+		</div>
+	</div>
+	
+</div> <!-- #page-container -->
+
+	<!-- Omniture -->
+	<script>var s_account = "andmetroprod";</script>
+	<script
+			src="https://metro.co.uk/wp-content/themes/metro-parent/dist/components/measurement.min.js?ver=1576505160545"
+			defer></script>
+
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function () {
+					navigator.serviceWorker.register('/service-worker?path=%2Fwp-content%2Fthemes%2Fmetro-parent').then(function (registration) {
+						// Registration was successful
+					}, function (err) {
+						// registration failed :(
+						console.log('ServiceWorker registration failed: ', err);
+					});
+				});
+			}
+		</script>
+				<script
+			src="https://cdn.p-n.io/pushly-sdk.min.js?domain_key=jDId2KP22rIz4Z72wUuP4NAlmbZZLaDv9Yte"
+			async>
+		</script>
+		<script>
+			var PushlySDK = window.PushlySDK || [];
+
+			function pushly() {
+				PushlySDK.push(arguments)
+			}
+
+			pushly('load', {
+				domainKey: 'jDId2KP22rIz4Z72wUuP4NAlmbZZLaDv9Yte',
+				sw: '/service-worker?path=%2Fwp-content%2Fthemes%2Fmetro-parent'
+			});
+		</script>
+		<script type='text/javascript' src='https://metro.co.uk/_static/??-eJytU+1OAyEQfCE5bNLa+MP4LBxs7zhhF2HppT69nL2L1bYJtiYkZD8YZmdAjkFY1C4bSHIo6z1DPMxbM6QHWRo0IQOy5B58afPAkURQccoZm1hq8oGwhEsxs3Wp8RZrIJxtZXC5s7gU/F4wJP4VVtP5CcZRYdpBLOcysqERT4mdDm+96iA5UgbMtR6vEmGRpnK2PaChKLWzoSUVzazXEtbCXFY5kbbK3YexI2KIf8JQ6YBatBmNg9v81T3Ax2Sp0A4UQryWv+RACcG3UK3d+fVDLjdY/LLzNFGtwOxqryYJWhXTbTzaCOqtDF94fEOJHlyAf4AsxeU/N1AYc9Mdt3uBR2s6qP+NZ08ukHNiBjl6+OpfVpvt03b1+LxeD58HkrwR'></script>
+		<script>
+		  window.addEventListener( 'omembedTrigger',
+			function() {
+			  if (window.FB
+				&& window.liveblog_settings
+				&& ( document.querySelector('.embed-facebook') || document.querySelector('.fb-video') )
+			  ) {
+				window.FB.XFBML.parse();
+			  }
+			}
+		  );
+		</script>
+				<script src="https://static.metro.co.uk/rta2/v-0.45.min.js" class="RTA2-loader" data-hosts="rta2.metro.co.uk"></script>
+		<script>
+			// @formatter:off
+			if (metro.pageData) {
+				var rtaParams = {};
+
+				if (document.referrer) {
+					rtaParams.r = document.referrer;
+				}
+
+				rtaParams.rp = (metro.siteData) ? metro.siteData.deviceType : '';
+
+				rtaParams.category = metro.pageData.topCategory;
+				rtaParams.subcategory = metro.pageData.subCategory;
+
+				
+				rtaParams.tags = [];
+				if (metro.pageData.postTags) {
+					rtaParams.tags = metro.pageData.postTags.split(',');
+				}
+
+				if (metro.pageData.postStyle) {
+					rtaParams.tags.push(metro.pageData.postStyle);
+				}
+
+				if ( metro.pageData.isBlogPost === true ) {
+					rtaParams.tags.push('blogs');
+				}
+
+				
+				// Only call a view tracker if we are NOT on a video/embed page
+				if (window.location.href.indexOf('video/embed') === -1) {
+					if ('RTA' in window){
+						window.RTA.tedEvent('cview', rtaParams);
+					}
+				}
+			}
+
+			// This is just a pass through for legacy
+			metro.ted = metro.ted || {};
+			metro.ted.tedEvent = function(type, params) {
+				window.RTA.tedEvent(type, params);
+			}
+			// @formatter:on
+		</script>
+
+		<script type='text/javascript' src='https://stats.wp.com/e-201952.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.0',blog:'146859608',post:'0',tz:'0',srv:'metro.co.uk'} ]);
+	_stq.push([ 'clickTrackerInit', '146859608', '0' ]);
+</script>
+
+<script type="text/javascript">
+
+	(function (metro, window) {
+
+		metro.comscore = {
+
+			udm_: function (a) {
+				var b = "comScore=", c = document, d = c.cookie, e = "", f = "indexOf", g = "substring", h = "length", i = 2048, j, k = "&ns_", l = "&", m, n, o, p, q = window, r = q.encodeURIComponent || escape;
+				if (d[f](b) + 1)for (o = 0, n = d.split(";"), p = n[h]; o < p; o++)m = n[o][f](b), m + 1 && (e = l + unescape(n[o][g](m + b[h])));
+				a += k + "_t=" + +(new Date) + k + "c=" + (c.characterSet || c.defaultCharset || "") + "&c8=" + r(c.title) + e + "&c7=" + r(c.URL) + "&c9=" + r(c.referrer), a[h] > i && a[f](l) > 0 && (j = a[g](0, i - 8).lastIndexOf(l), a = (a[g](0, j) + k + "cut=" + r(a[g](j + 1)))[g](0, i)), c.images ? (m = new Image, q.ns_p || (ns_p = m), m.src = a) : c.write("<", "p", "><", 'img src="', a, '" height="1" width="1" alt="*"', "><", "/p", ">")
+			},
+
+			trackPageView: function () {
+				var newParams, url = 'http' + (document.location.href.charAt(4) == 's' ? 's://sb' : '://b') + '.scorecardresearch.com/b?c1=2&c2=14366613';
+				url += '&ns_site=master&mo_vs_pl=we&mo_vslabel=metro&mo_site=metro&mo_sitesection=MetroWeb&mo_domain=metro.co.uk&ns_type=view&';
+				try {
+					this.pageParams = this.getPageParams();
+					newParams = this.jsonToQueryString(this.pageParams);
+					this.udm_(url + newParams);
+				} catch (exception) {
+					var param2 = 'mo_err_msg=' + exception.message + ' ==> trackPageView';
+					this.udm_(url + param2);
+				}
+			},
+
+			getPageParams: function (referrer, currentHost) {
+				try {
+					var referrer = referrer || document.referrer;
+					var currentHost = currentHost || document.location.hostname;
+					var params = {
+						'mo_domain'      : document.location.hostname,
+						'mo_page_name'   : this.getPageName(),
+						'mo_channel'     : metro.pageData.topCategory,
+						'mo_sub_channel' : metro.pageData.subCategory,
+						'mo_content_type': metro.pageData.type,
+						'mo_ref_do'      : this.getReferrerHost(),
+						'mo_vs_ct'       : 'ge', // content type - default general
+						'name'           : ''
+					};
+
+					// Pick up data left in cookie from any internal link click that might've brought us here
+					var eventCookie = this.readCookie('metro-event-comscore');
+					if (eventCookie) {
+						var c = JSON.parse(decodeURIComponent(eventCookie));
+						params.mo_lnk_pt = c.pageType; // Page Type
+						// params.mo_lnk_mod = ''; // Module Name
+						params.mo_lnk_link = c.track || ''; // Module Link
+						// params.mo_lnk_more = ''; // More Details - data-track-destination, but we only use it in metro-thumbnail-link.php
+						this.eraseCookie('metro-event-comscore');
+					}
+
+					this.initAdvancedPageParams(params, referrer, currentHost);
+					return params;
+				} catch (exception) {
+					params = {
+						'mo_err_msg': exception.message + ' ==> getPageParams'
+					};
+					return params;
+				}
+			},
+
+			createCookie: function (name, value, days) {
+				if (days) {
+					var date = new Date();
+					date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+					var expires = "; expires=" + date.toGMTString();
+				}
+				else var expires = "";
+				document.cookie = name + "=" + value + expires + "; path=/";
+			},
+
+			readCookie: function (name) {
+				var nameEQ = name + "=";
+				var ca = document.cookie.split(';');
+				for (var i = 0; i < ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+					if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+				}
+				return null;
+			},
+
+			eraseCookie: function (name) {
+				this.createCookie(name, "", -1);
+			},
+
+			/**
+			 * Subscribe handler to internal click events. We set a cookie registering the event
+			 * which we pick up on the next page load and report to comscore in getPageParams
+			 * TODO - subscribe a similar handler to metro:event:click so we're recording clicks on elements without an internal href or with no href
+			 */
+			initClickTracking: function () {
+				if (metro && metro.utils) {
+					metro.utils.Observer('metro:event:link:internal').subscribe(function (track, el) {
+						if (!metro.allCookies) {
+							return;
+						}
+						metro.allCookies.removeItem('metro-event-comscore', '/');
+						var cookieValue = {
+							track   : track,
+							pageType: metro.pageData.type
+						};
+						metro.allCookies.setItem('metro-event-comscore', JSON.stringify(cookieValue), null, '/');
+					});
+					metro.utils.Observer('metro:event:link:external').subscribe(function (track, el) {
+						metro.comscore.trackLink('', track, el);
+					});
+					metro.utils.Observer('metro:event:click').subscribe(function (track, el) {
+						metro.comscore.trackLink('', track, el);
+					});
+				}
+			},
+
+			trackLink: function (widgetName, linkName, linkEl) {
+				var newParams, url = 'http' + (document.location.href.charAt(4) == 's' ? 's://sb' : '://b') + '.scorecardresearch.com/b?c1=22&c2=14366613';
+				url += '&ns_site=master&mo_vs_pl=we&mo_vslabel=metro&mo_site=metro&mo_sitesection=MetroWeb&mo_domain=metro.co.uk&ns_type=hidden&';
+				try {
+					this.linkParams = this.getLinkParams(widgetName, linkName, linkEl);
+					newParams = this.jsonToQueryString(this.linkParams);
+					this.udm_(url + newParams);
+				} catch (exception) {
+					var param2 = 'mo_err_msg=' + exception.message + ' ==> trackLink';
+					this.udm_(url + param2);
+				}
+			},
+
+			trackEvent: function (args) {
+				// TODO:
+			},
+
+			getLinkParams: function (widgetName, linkName, linkEl) {
+				try {
+					var dataTrackDestination = null;
+					var params = {
+						'mo_domain'      : document.location.hostname,
+						'mo_page_name'   : this.getPageName(),
+						'mo_channel'     : metro.pageData.topCategory,
+						'mo_sub_channel' : metro.pageData.subCategory,
+						'mo_content_type': 'link_track',
+						'mo_ref_do'      : this.getReferrerHost(),
+						'mo_vs_ct'       : 'cl',
+						'name'           : 'Metro.general.custom.link-click.event',
+						'mo_lnk_pt'      : metro.pageData.type, // Page Type
+						'mo_lnk_mod'     : widgetName || 'Not Available', // Module Name
+						'mo_lnk_link'    : linkName || 'Not Available', // Module Link
+						'mo_lnk_more'    : '' // More Details
+					};
+					if (linkEl) {
+						params.mo_lnk_href = linkEl.href;
+						dataTrackDestination = linkEl.getAttribute('data-track-destination');
+					}
+					if (dataTrackDestination !== null) {
+						params.mo_lnk_more = dataTrackDestination;
+					}
+					return params;
+				} catch (exception) {
+					params = {
+						'mo_err_msg': exception.message + ' ==> getLinkParams'
+					};
+					return params;
+				}
+			},
+
+			jsonToQueryString: function (json) {
+				var q = new Array();
+				try {
+					for (var property in json) {
+						if (json.hasOwnProperty(property)) {
+							q.push(encodeURIComponent(property) + '=' + encodeURIComponent(json[property]));
+						}
+					}
+					return q.join('&');
+				} catch (exception) {
+					return ('mo_err_msg=' + exception.message + ' ==> jsonToQueryString');
+				}
+			},
+
+			getPageName: function () {
+				var pageName = metro.pageData.requestUrl;
+				if (pageName === '/') {
+					pageName = 'home';
+				}
+				return pageName;
+			},
+
+			getReferrerHost: function () {
+				try {
+					var refererHost = "direct";
+					if (document.referrer) {
+						var docReferrerHostMatches = new RegExp("://([^/]*)/.*").exec(document.referrer);
+						if (docReferrerHostMatches) {
+							var docReferrerHost = docReferrerHostMatches[1];
+							refererHost = docReferrerHost;
+						}
+					}
+					return refererHost;
+				} catch (exception) {
+					return ('mo_err_msg=' + exception.message + ' ==> getReferrerHost');
+				}
+
+			},
+
+			/**
+			 * @param referrer
+			 * @returns {boolean}
+			 */
+			isEntryPage: function (referrer, currentHost) {
+				if ((referrer === '') || (typeof referrer !== 'string')) {
+					// Direct
+					return true;
+				} else if (referrer.indexOf(currentHost) === -1) {
+					// From another site
+					return true;
+				}
+				return false;
+			},
+
+			initAdvancedPageParams: function (params, referrer, currentHost) {
+				try {
+					if (this.isEntryPage(referrer, currentHost)) {
+						params.mo_entry_page = metro.pageData.requestUrl;
+					}
+					if ((metro.pageData.type == 'article') || (metro.pageData.type === 'gallery')) {
+						params.name = this.getComScoreName(metro.pageData.subCategory, 'article', metro.pageData.postId);
+						params.mo_article_id = metro.pageData.postId;
+						params.mo_article_title = metro.pageData.title;
+						params.mo_article_author = metro.pageData.author;
+						params.mo_ar_owner = metro.pageData.creator;
+						params.mo_ar_age_hh = metro.pageData.postAge;
+						params.mo_article_pd = this.getPubDate();
+						params.mo_article_ph = this.getPubTime();
+						params.mo_ar_age_dd = this.getAgeInDays(metro.pageData.pubDate, new Date());
+						if (!params.mo_events) {
+							params.mo_events = 'article_view';
+						} else {
+							params.mo_events = params.mo_events + ',article_view';
+						}
+						if (metro.pageData.isClubMetro === true) {
+							params.mo_vs_ct = 'cm';
+							params.mo_content_type = 'club metro blogs article';
+						} else if (metro.pageData.isBlogPost === true) {
+							params.mo_vs_ct = 'ba';
+							params.mo_content_type = 'blogs article';
+						} else {
+							params.mo_vs_ct = 'ar';
+						}
+						if (metro.pageData.containsBrightcove) {
+							params.mo_events += ',bc_videos';
+						}
+						if (metro.pageData.containsYoutube) {
+							params.mo_events += ',yt_videos';
+						}
+					}
+					if ((metro.pageData.type) && ((metro.pageData.type === 'home'))) {
+						// Home page
+						params.name = this.getComScoreName(metro.pageData.subCategory, 'home');
+						params.mo_vs_ct = 'ho';
+					}
+					if ((metro.pageData.type) && ((metro.pageData.type.indexOf('catpage:') >= 0))) {
+						// Channel or sub-channel page
+						params.name = this.getComScoreName(metro.pageData.subCategory, 'home');
+						params.mo_vs_ct = 'ch';
+					}
+					if ((metro.pageData.type) && ((metro.pageData.type === 'tag'))) {
+						params.name = 'Metro.tags.' + this.getItemSlug(metro.pageData.requestUrl, '/tag/') + '.tag.page';
+						params.mo_vs_ct = 'tp';
+					}
+					if ((metro.pageData.type) && ((metro.pageData.type === 'author'))) {
+						params.name = 'Metro.authors.' + this.getItemSlug(metro.pageData.requestUrl, '/author/') + '.author.page';
+						params.mo_vs_ct = 'au';
+					}
+					if ((metro.pageData.type) && ((metro.pageData.type === 'errorPage'))) {
+						params.name = 'Metro.home.default.error.page';
+						params.mo_vs_ct = 'er';
+						params.mo_content_type = 'error';
+					}
+				}
+				catch (exception) {
+					return (params.mo_err_msg = exception.message + ' ==> initAdvancedPageParams');
+				}
+			},
+
+			/**
+			 * comScore page name string
+			 * @param subChannel e.g. "sport/football"
+			 * @param pageType e.g. "article"
+			 * @return e.g.
+			 Metro.home.default.home.page
+			 Metro.news.default.home.page
+			 Metro.news.uk.home.page
+			 Metro.news.uk.article.5094372.page
+			 Metro.news.world.home.page
+			 Metro.sport.default.home.page
+			 Metro.sport.oddballs.home.page
+			 Metro.sport.football.home.page
+			 Metro.tags.one-direction.tag.page
+			 Metro.home.default.error.page
+			 */
+			getComScoreName: function (subChannel, pageType, postId) {
+				var subChannelStr = "home.default";
+				if (subChannel) {
+					subChannelStr = (subChannel.indexOf("/") < 0) ? subChannel + ".default" : subChannel;
+				}
+				var postIdStr = (postId) ? "." + postId : '';
+				var shortName = "Metro." + subChannelStr.replace('/', '.') + "." + pageType + postIdStr;
+				return shortName + ".page";
+			},
+
+			/**
+			 * Strips prefixes like /tag/ and /author/ from request URL slug
+			 * @param requestUrl /tag/one-direction/
+			 * @param prefix like /tag/
+			 * @returns {string}
+			 */
+			getItemSlug: function (requestUrl, prefix) {
+				// Tag page Metro.tags.one-direction.tag.page
+				var prefixLen = prefix.length;
+				var targetLength = requestUrl.length - (prefixLen + '/'.length);
+				var slug = requestUrl.substr(prefixLen, targetLength);
+				return slug;
+			},
+
+
+			getPubDate: function () {
+				try {
+					var tmpDate = metro.pageData.pubDate.split("-");
+					pubDate = tmpDate[2] + tmpDate[1] + tmpDate[0];
+					return pubDate;
+				}
+				catch (exception) {
+					return ('mo_err_msg=' + exception.message + ' ==> getPubDate');
+				}
+			},
+
+			getPubTime: function () {
+				try {
+					var tmpTime = metro.pageData.pubTime.split(":");
+					return tmpTime[0];
+				}
+				catch (exception) {
+					return ('mo_err_msg=' + exception.message + ' ==> getPubTime');
+				}
+			},
+
+			/* @param pubDateCalendarDate e.g. metro.pageData.pubDate
+			 * @param currentDate e.g. new Date()
+			 */
+			getAgeInDays: function (pubDateCalendarDate, currentDate) {
+				try {
+					var one_day = 1000 * 60 * 60 * 24;
+					var pubDateArray = pubDateCalendarDate.split("-");
+					var pubDateObj = new Date(pubDateArray[2], (pubDateArray[1] - 1), pubDateArray[0]);
+					var ageInDays = Math.ceil((currentDate.getTime() - pubDateObj.getTime()) / (one_day));
+					return ageInDays;
+				}
+				catch (exception) {
+					return ('mo_err_msg=' + exception.message + ' ==> getAgeInDays');
+				}
+			}
+
+		}
+
+		metro.comscore.trackPageView();
+
+	})(metro, window);
+
+	if(jQuery) {
+		jQuery(metro.comscore.initClickTracking);
+	}
+
+</script>
+
+<script>
+	var ua = navigator.userAgent;
+
+	if (ua && ua.indexOf("Firefox") > -1) {
+		document.getElementsByTagName('html')[0].classList.add('moz');
+	}
+</script>
+
+<script>
+
+	var _comscore = _comscore || [];
+	_comscore.push({
+		c1: "2", c2: "6034964",
+		options: {
+			url_append: "comscorekw=news"
+		}
+	});
+	(function () {
+		var s = document.createElement("script"), el = document.getElementsByTagName("script")[0];
+		s.async = true;
+		s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+		el.parentNode.insertBefore(s, el);
+	})();
+</script>
+<noscript>
+	<img src="https://sb.scorecardresearch.com/p?c1=2&c2=6034964&cv=2.0&cj=1" alt="comscore"/>
+</noscript>
+
+<script>
+
+	// Load deferred scripts
+	metro.deferredScripts = metro.deferredScripts || [];
+
+	// Twitter
+	metro.deferredScripts.push({
+		url: '//platform.twitter.com/widgets.js',
+		id: 'twitter-widgets',
+		callback: function () {
+			// Stop Twitter widgets.js from taking over the function of the top Twitter button
+			var shareButtons = document.getElementsByClassName('share-button');
+			for (var i=0; i<shareButtons.length; i++) {
+				var shareButton = shareButtons[i];
+				if (shareButton.classList.contains('twitter')) {
+					shareButton.addEventListener('click', metro.share.sharePageToTwitter);
+				}
+			}
+		}
+	});
+
+	
+	
+	(function (metro) {
+
+		function loadScripts() {
+			if (metro.deferredScripts.length > 0) {
+				for (var i = 0; i < metro.deferredScripts.length; i++) {
+					loadScript(metro.deferredScripts[i]);
+				}
+			}
+			window.removeEventListener('metro:scroll', loadScripts);
+			window.removeEventListener('load', loadScripts);
+		}
+
+		function loadScript(obj) {
+			if (document.getElementById(obj.id)) {
+				return;
+			}
+			var script = document.createElement('script');
+			script.src = obj.url;
+			script.id = obj.id;
+			document.head.appendChild(script);
+			if ('function' === typeof obj.callback) {
+				obj.callback();
+			}
+		}
+
+		if ('article' === metro.pageData.type) {
+			window.addEventListener('metro:scroll', loadScripts);
+		} else {
+			window.addEventListener('load', loadScripts);
+		}
+
+	})(metro);
+
+</script>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b30b7dc1b0","applicationID":"117563747","transactionName":"MQdXY0QAChAEVhBfDQhNdFRCCAsNSlYFQgcBDUdO","queueTime":0,"applicationTime":416,"atts":"HUBAFQwaGU9HVEYMGRsf","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

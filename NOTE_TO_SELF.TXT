@@ -1,0 +1,25 @@
+{% comment %} 
+
+Create a virtual environment to store your code if using large dependencies
+like scrapy.
+The virtual environment is excluded from git thanks to .gitignore (just add
+venv/ inside it or the name you have chosen for the virtual environment),
+and also note  you don't need to store the projects insode the venv directory,
+in fact you can store them anywhere as long as you activate the appropriate
+venv.
+It's good practice to save a file with the list of the dependencies, you can do
+it in two ways:
+1.  Create a requirements.txt file by using the following command:
+        pip3 freeze > requirements.txt
+    Those dependencies can be installed with:
+        pip3 install -r requirements.txt
+2.  Alternatively the requirements.txt file can also be created with:
+        pip3 install -r requirements.txt
+
+Thanks to the contributors @StackOverflow:
+    https://stackoverflow.com/questions/45394653
+           /when-working-with-a-venv-virtual-environment
+           -which-files-should-i-be-commiting
+
+Matteo 
+{% endcomment %}

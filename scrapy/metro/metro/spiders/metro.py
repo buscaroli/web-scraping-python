@@ -1,3 +1,10 @@
+# LEARNING TO CRAWL THE WEB WITH SCRAPY AND PYTHON
+# Matteo
+#
+# Simple crawler that downloads some html from four pages
+# of a websites and saves them as html files in the current
+# directory.
+
 import scrapy
 
 

@@ -9,17 +9,9 @@ from scrapy.item import Item, Field
 
 
 class PropertiesItem(Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
     title = Field()
     price = Field()
     description = Field()
-    # address = Field()
     link = Field()
-
-    # images = Field()
-    # location = Field()
-
-    # url = Field()
-    # project = Field()
-    # spider = Field()
-    # server = Field()
-    # date = Field()

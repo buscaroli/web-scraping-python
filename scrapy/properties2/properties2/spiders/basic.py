@@ -1,6 +1,7 @@
 import scrapy
 from properties2.items import PropertiesItem
 from scrapy.loader import ItemLoader
+from scrapy.loader.processors import MapCompose
 
 
 class BasicSpider(scrapy.Spider):
@@ -11,6 +12,13 @@ class BasicSpider(scrapy.Spider):
                   f'vendita-case/{city}/?criterio=rilevanza']
 
     def parse(self, response):
+        '''Parses a property page from www.immobiliare.it
+        # UNIT TESTING: run 'scrapy check basic'
+        @url https://www.immobiliare.it/vendita-case/bologna/?criterio=rilevanza
+        @returns items 1
+        @scrapes title price description link
+        '''
+
         # DEBUGGING: HANDY TO PLAY WITH XPATH
         # self.log(response.xpath("//li[@data-id]//p[@class='titolo text-primary']//@title").extract())
         # self.log(response.xpath("//li[@data-id]//li[@class='lif__item lif__pricing']//text()").re('\d+[.]?\d+'))
@@ -27,8 +35,8 @@ class BasicSpider(scrapy.Spider):
         # return item
 
         l = ItemLoader(item=PropertiesItem(), response=response)
-        l.add_xpath('title', "//li[@data-id]//p[@class='titolo text-primary']//@title")
+        l.add_xpath('title', "//li[@data-id]//p[@class='titolo text-primary']//@title", MapCompose(str.strip, str.title))
         l.add_xpath('price', "//li[@data-id]//li[@class='lif__item lif__pricing']//text()", re='\d+[.]?\d+')
-        l.add_xpath('description', "//li[@data-id]//p[@class='descrizione__truncate']/text()")
-        l.add_xpath('link', "//li[@data-id]//p[@class='titolo text-primary']/a/@href")
+        l.add_xpath('description', "//li[@data-id]//p[@class='descrizione__truncate']/text()", MapCompose(str.strip, str.capitalize))
+        l.add_xpath('link', "//li[@data-id]//p[@class='titolo text-primary']/a/@href", MapCompose(str.strip))
         return l.load_item()

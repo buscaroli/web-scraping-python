@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from properties.items import PropertiesItem
+from scrapy.loader import ItemLoader
 
 
 class BasicSpider(scrapy.Spider):

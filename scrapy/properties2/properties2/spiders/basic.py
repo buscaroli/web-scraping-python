@@ -1,5 +1,6 @@
 import scrapy
 from properties2.items import PropertiesItem
+from scrapy.loader import ItemLoader
 
 
 class BasicSpider(scrapy.Spider):
@@ -16,9 +17,16 @@ class BasicSpider(scrapy.Spider):
         # self.log(response.xpath("//li[@data-id]//p[@class='descrizione__truncate']/text()").extract())
         # self.log(response.xpath("//li[@data-id]//p[@class='titolo text-primary']/a/@href").extract())
 
-        item = PropertiesItem()
-        item['title'] = response.xpath("//li[@data-id]//p[@class='titolo text-primary']//@title").extract()
-        item['price'] = response.xpath("//li[@data-id]//li[@class='lif__item lif__pricing']//text()").re('\d+[.]?\d+')
-        item['description'] = response.xpath("//li[@data-id]//p[@class='descrizione__truncate']/text()").extract()
-        item['link'] = response.xpath("//li[@data-id]//p[@class='titolo text-primary']/a/@href").extract()
-        return item
+        # item = PropertiesItem()
+        # item['title'] = response.xpath("//li[@data-id]//p[@class='titolo text-primary']//@title").extract()
+        # item['price'] = response.xpath("//li[@data-id]//li[@class='lif__item lif__pricing']//text()").re('\d+[.]?\d+')
+        # item['description'] = response.xpath("//li[@data-id]//p[@class='descrizione__truncate']/text()").extract()
+        # item['link'] = response.xpath("//li[@data-id]//p[@class='titolo text-primary']/a/@href").extract()
+        # return item
+
+        l = ItemLoader(item=PropertiesItem(), response=response)
+        l.add_xpath('title', "//li[@data-id]//p[@class='titolo text-primary']//@title")
+        l.add_xpath('price', "//li[@data-id]//li[@class='lif__item lif__pricing']//text()", re='\d+[.]?\d+')
+        l.add_xpath('description', "//li[@data-id]//p[@class='descrizione__truncate']/text()")
+        l.add_xpath('link', "//li[@data-id]//p[@class='titolo text-primary']/a/@href")
+        return l.load_item()

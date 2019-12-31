@@ -17,6 +17,8 @@ class BasicSpider(scrapy.Spider):
         # self.log(response.xpath("//li[@data-id]//p[@class='descrizione__truncate']/text()").extract())
         # self.log(response.xpath("//li[@data-id]//p[@class='titolo text-primary']/a/@href").extract())
 
+        # THE FOLLOWING 'BLOCK' HAS BEEN REPLACED BY ITEMLOADER TO MAKE IT
+        # TIDIER AND TO BE ABLE TO USE ITEMLOADER'S METHODS
         # item = PropertiesItem()
         # item['title'] = response.xpath("//li[@data-id]//p[@class='titolo text-primary']//@title").extract()
         # item['price'] = response.xpath("//li[@data-id]//li[@class='lif__item lif__pricing']//text()").re('\d+[.]?\d+')

@@ -1,3 +1,4 @@
+# ---------------- NOT WORKING ----------------------
 import scrapy
 from properties2.items import PropertiesItem
 from scrapy.loader import ItemLoader

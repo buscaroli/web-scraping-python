@@ -40,3 +40,5 @@ class BasicSpider(scrapy.Spider):
         l.add_xpath('description', "//li[@data-id]//p[@class='descrizione__truncate']/text()", MapCompose(str.strip, str.capitalize))
         l.add_xpath('link', "//li[@data-id]//p[@class='titolo text-primary']/a/@href", MapCompose(str.strip))
         return l.load_item()
+
+    

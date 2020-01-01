@@ -13,7 +13,7 @@ class propertySpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        ds = ItemLoader(item=ListingItem(), response=response)
+        # ds = ItemLoader(item=ListingItem(), response=response)
 
         for page in response.xpath('//ul[@id="listing-container"]'):
             # ds.add_xpath('title', '//h1/text()',
@@ -24,11 +24,16 @@ class propertySpider(scrapy.Spider):
             #                             MapCompose(str.strip, str.capitalize))
             # ds.add_xpath('link', '//div[@class="showcase__list"]//div/img/@src',
             #                      MapCompose(str.strip))
+            title = page.xpath('//p/a/@title').extract()
+            price = page.xpath('//li[@class="lif__item lif__pricing"]/text()').re('\d+[.]?\d+')
+            description = page.xpath('//p[@class="descrizione__truncate"]/text()').extract()
+            link = page.xpath('//div[@class="showcase__item showcase__item--active"]/img[@src]/@src').extract()
+
             yield {
-                'title': page.xpath('//p/a/@title').extract(),
-                'price': page.xpath('//li[@class="lif__item lif__pricing"]/text()').re('\d+[.]?\d+'),
-                'description': page.xpath('//p[@class="descrizione__truncate"]/text()').extract(),
-                'link': page.xpath('//div[@class="showcase__item showcase__item--active"]/img[@src]/@src').extract()
+                'title': title,
+                'price': price,
+                'description': description,
+                'link': link
             }
 
         next_page = response.xpath('//li/a[@title="Pagina successiva"]/@href').extract_first()

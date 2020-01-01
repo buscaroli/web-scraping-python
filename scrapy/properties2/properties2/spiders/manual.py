@@ -14,15 +14,25 @@ class BasicSpider(scrapy.Spider):
 
     def parse(self, response):
         ''' Gets the index of the next page, if exists'''
-        # next_link_selector is a selector because the methos .extract() is not evoked on it,
-        # that's left to the following line, inside the for loop: 
-        next_link_selector = response.xpath('//li/a[@title="Pagina successiva"]/@href')
-        for url in next_link_selector.extract():
-            yield Request(url)
+        # # next_link_selector is a selector because the methos .extract() is not evoked on it,
+        # # that's left to the following line, inside the for loop: 
+        # next_link_selector = response.xpath('//*[contains(@class,"pull-right pagination")]/li/a/@href')
+        # for url in next_link_selector.extract():
+        #     yield Request(url)
+
+        # Getting the total number of pages, creating a list of links and yielding every link
+        pages_number = int(response.xpath('//ul[@class="pagination pagination__number"]//li[last()]//text()').get())
+        # links = []
+        for i in range(2, pages_number):
+            new_link = self.start_urls[0] + '?pag=' + str(i)
+            yield scrapy.Request(url=response(new_link))
+            # links.append(new_link)
+        # return [scrapy.Request(url=link, callback=self.parse_item) for link in links]
+
         item_selector = response.xpath("//li[@data-id]//p[@class='titolo text-primary']/a/@href")
-        # IMPORTANT: WONT WORK UNLESS DONT_FILTER IS SET TO TRUE !!
         for url in item_selector.extract():
-            yield Request(url, callback=self.parse_item, dont_filter=True)
+            yield Request(response.url, callback=self.parse_item)
+
         # next_link = response.xpath('//li/a[@title="Pagina successiva"]/@href').extract()
         # for url in next_link:
         #     yield Request(urljoin(response.url, url), callback=self.parse_item)
@@ -35,27 +45,20 @@ class BasicSpider(scrapy.Spider):
         @scrapes title price description link
         '''
 
-        # DEBUGGING: HANDY TO PLAY WITH XPATH
+        # DEBUGGING: HANDY FOR PLAYING WITH XPATH
         # self.log(response.xpath("//li[@data-id]//p[@class='titolo text-primary']//@title").extract())
         # self.log(response.xpath("//li[@data-id]//li[@class='lif__item lif__pricing']//text()").re('\d+[.]?\d+'))
         # self.log(response.xpath("//li[@data-id]//p[@class='descrizione__truncate']/text()").extract())
         # self.log(response.xpath("//li[@data-id]//p[@class='titolo text-primary']/a/@href").extract())
 
         # THE FOLLOWING 'BLOCK' HAS BEEN REPLACED BY ITEMLOADER TO MAKE IT
-        # TIDIER AND TO BE ABLE TO USE ITEMLOADER'S METHODS
+        # TIDIER AND TO BE ABLE TO USE ITEMLOADER'S METHODS (like MapCompose)
         # item = PropertiesItem()
         # item['title'] = response.xpath("//li[@data-id]//p[@class='titolo text-primary']//@title").extract()
         # item['price'] = response.xpath("//li[@data-id]//li[@class='lif__item lif__pricing']//text()").re('\d+[.]?\d+')
         # item['description'] = response.xpath("//li[@data-id]//p[@class='descrizione__truncate']/text()").extract()
         # item['link'] = response.xpath("//li[@data-id]//p[@class='titolo text-primary']/a/@href").extract()
         # return item
-
-        # l = ItemLoader(item=PropertiesItem(), response=response)
-        # l.add_xpath('title', "//li[@data-id]//p[@class='titolo text-primary']//@title", MapCompose(str.strip, str.title))
-        # l.add_xpath('price', "//li[@data-id]//li[@class='lif__item lif__pricing']//text()", re='\d+[.]?\d+')
-        # l.add_xpath('description', "//li[@data-id]//p[@class='descrizione__truncate']/text()", MapCompose(str.strip, str.capitalize))
-        # l.add_xpath('link', "//li[@data-id]//p[@class='titolo text-primary']/a/@href", MapCompose(str.strip))
-        # return l.load_item()
 
         l = ItemLoader(item=PropertiesItem(), response=response)
         l.add_xpath('title', "//h1/text()", MapCompose(str.strip, str.title))
